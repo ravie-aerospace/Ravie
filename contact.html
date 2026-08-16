@@ -4,9 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - RAVIE Aerospace</title>
-    <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for Social Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            padding: 20px 50px;
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #58a6ff;
+        }
+
+        .nav-link {
+            color: #c9d1d9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #58a6ff;
+        }
+
+        .contact-container {
+            max-width: 950px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+            text-align: center;
+            background: linear-gradient(45deg, #58a6ff, #79c0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #8b949e;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background-color: #161b22;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .input-group {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #c9d1d9;
+            font-size: 14px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: #58a6ff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #238636;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #2ea043;
+        }
+
+        .form-status {
+            margin-top: 15px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 240px;
+            border-left: 1px solid #30363d;
+            padding-left: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+
+        .contact-info a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info .icon {
+            color: #58a6ff;
+            margin-right: 5px;
+        }
+
+        .social-section {
+            margin-top: 30px;
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+        }
+
+        .social-section h4 {
+            margin-bottom: 15px;
+            color: #8b949e;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 20px;
+            color: #c9d1d9;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #58a6ff;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            .contact-info {
+                border-left: none;
+                border-top: 1px solid #30363d;
+                padding-left: 0;
+                padding-top: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -40,24 +247,25 @@
                 <button type="submit" class="submit-btn" id="submitBtn">
                     <span>Send Message</span> <i class="fas fa-paper-plane"></i>
                 </button>
-                
+
                 <p id="formStatus" class="form-status"></p>
             </form>
 
             <!-- Direct Contact Info Section -->
             <div class="contact-info">
                 <h3>Direct Contact</h3>
-                <p><i class="fas fa-envelope icon"></i> <strong>Email:</strong><br>
-                   <a href="mailto:Ravie.aerospace@gmail.com">Ravie.aerospace@gmail.com</a></p>
                 
+                <p><i class="fas fa-envelope icon"></i> <strong>Email:</strong><br>
+                <a href="mailto:ravie.aerospace@gmail.com">ravie.aerospace@gmail.com</a></p>
+
                 <p><i class="fas fa-phone icon"></i> <strong>Phone:</strong><br>
-                   <a href="tel:+919918075777">+91 9918075777</a></p>
+                <a href="tel:+919918075777">+91 9918075777</a></p>
 
                 <div class="social-section">
                     <h4>Connect With Us</h4>
                     <div class="social-icons">
-                        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
                         <a href="https://github.com/ravie-aerospace" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
@@ -70,14 +278,13 @@
         const form = document.getElementById("contactForm");
         const status = document.getElementById("formStatus");
 
-        form.addEventListener("submit", async function(event) {
-            event.preventDefault();
-            const data = new FormData(event.target);
-            status.style.display = "block";
-            status.style.color = "#58a6ff";
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const data = new FormData(e.target);
             status.innerHTML = "Sending message...";
+            status.style.color = "#888888";
 
-            fetch(event.target.action, {
+            fetch(e.target.action, {
                 method: form.method,
                 body: data,
                 headers: { 'Accept': 'application/json' }
@@ -92,214 +299,9 @@
                 }
             }).catch(error => {
                 status.style.color = "#f85149";
-                status.innerHTML = "✕ Error sending message. Please try again later.";
+                status.innerHTML = "✕ Error sending message. Please try again.";
             });
         });
-    </script>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #0d1117;
-    color: #ffffff;
-    min-height: 100vh;
-}
-
-.navbar {
-    padding: 20px 50px;
-    background-color: #161b22;
-    border-bottom: 1px solid #30363d;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #58a6ff;
-}
-
-.nav-link {
-    color: #c9d1d9;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.nav-link:hover {
-    color: #58a6ff;
-}
-
-.contact-container {
-    max-width: 950px;
-    margin: 50px auto;
-    padding: 20px;
-    width: 90%;
-}
-
-h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-    text-align: center;
-    background: linear-gradient(45deg, #58a6ff, #79c0ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-    color: #8b949e;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.contact-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    background-color: #161b22;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #30363d;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-}
-
-.contact-form {
-    flex: 2;
-    min-width: 280px;
-}
-
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #c9d1d9;
-    font-size: 14px;
-}
-
-.input-group input, 
-.input-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    background-color: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 14px;
-    transition: border-color 0.3s;
-}
-
-.input-group input:focus, 
-.input-group textarea:focus {
-    outline: none;
-    border-color: #58a6ff;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 14px;
-    background-color: #238636;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #2ea043;
-}
-
-.form-status {
-    margin-top: 15px;
-    font-size: 14px;
-    text-align: center;
-    display: none;
-}
-
-.contact-info {
-    flex: 1;
-    min-width: 240px;
-    border-left: 1px solid #30363d;
-    padding-left: 30px;
-}
-
-.contact-info h3 {
-    margin-bottom: 20px;
-    color: #58a6ff;
-}
-
-.contact-info p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #c9d1d9;
-    font-size: 14px;
-}
-
-.contact-info a {
-    color: #79c0ff;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-.icon {
-    color: #58a6ff;
-    margin-right: 5px;
-}
-
-.social-section {
-    margin-top: 30px;
-    border-top: 1px solid #30363d;
-    padding-top: 20px;
-}
-
-.social-section h4 {
-    color: #8b949e;
-    margin-bottom: 12px;
-    font-size: 14px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    color: #c9d1d9;
-    font-size: 20px;
-    transition: color 0.3s;
-}
-
-.social-icons a:hover {
-    color: #58a6ff;
-}
-
-@media (max-width: 768px) {
-    .contact-wrapper {
-        flex-direction: column;
-    }
-    .contact-info {
-        border-left: none;
-        border-top: 1px solid #30363d;
-        padding-left: 0;
-        padding-top: 25px;
-    }
-}
-
+    </script>
 </body>
 </html>
