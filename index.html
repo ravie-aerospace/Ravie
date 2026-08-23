@@ -3,84 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAVIE - The Future of Aerospace</title>
+
+    <title>RAVIE - Shaping the Future of Aerospace</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0f19;
-            color: #d1d5db;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            background: #07111f;
+            color: #d9e2ec;
         }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid #1f2937;
+            padding: 1.2rem 5%;
+            background: rgba(7, 17, 31, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 10;
         }
+
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffffff;
         }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .contact-button {
+            padding: 0.65rem 1.2rem;
+            border: 1px solid #38bdf8;
+            border-radius: 5px;
+            color: #ffffff !important;
+        }
+
+        .contact-button:hover {
+            background: #38bdf8;
+            color: #07111f !important;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
         .hero {
+            min-height: 78vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 5rem 2rem;
-            background: linear-gradient(rgba(11, 15, 25, 0.8), #0b0f19), url('https://images.unsplash.com/photo-1446776811984-b22d53c3cd9e') no-repeat center center/cover;
+            padding: 6rem 2rem;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(30, 100, 160, 0.20),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    180deg,
+                    #07111f 0%,
+                    #0a1628 55%,
+                    #07111f 100%
+                );
         }
+
+        /* Subtle orbital rings */
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(56, 189, 248, 0.12);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 700px;
+            height: 280px;
+            transform: rotate(-18deg);
+        }
+
+        .hero::after {
+            width: 900px;
+            height: 360px;
+            transform: rotate(18deg);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-brand {
+            font-size: 1rem;
+            letter-spacing: 5px;
+            color: #38bdf8;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #fff;
+            margin: 0;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -1px;
         }
+
+        .hero-subtitle {
+            margin-top: 1.5rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #38bdf8;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            margin: 1.5rem auto 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #aebdcd;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 0.9rem 1.7rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .primary-button {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .primary-button:hover {
+            background: #ffffff;
+        }
+
+        .secondary-button {
+            border: 1px solid #526579;
+            color: #ffffff;
+        }
+
+        .secondary-button:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           RAVIE PILLARS
+        ========================= */
+
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 5rem 5%;
+            max-width: 1300px;
+            margin: auto;
         }
+
         .card {
-            background-color: #111827;
+            background: #0d1a2b;
             padding: 2rem;
             border-radius: 8px;
-            border: 1px solid #1f2937;
+            border: 1px solid #1c3045;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
         .card h2 {
             margin-top: 0;
-            color: #3b82f6;
+            color: #38bdf8;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            line-height: 1.7;
+            color: #aebdcd;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                padding: 1rem 1.2rem;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+            }
+
+            .nav-links a:not(.contact-button) {
+                display: none;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 5rem 1.5rem;
+            }
+
+            .hero::before {
+                width: 500px;
+                height: 220px;
+            }
+
+            .hero::after {
+                width: 650px;
+                height: 280px;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
+            .grid-container {
+                padding: 3rem 1.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <nav class="navbar">
-        <div class="logo">RAVIE</div>
-        <a href="contact.html" class="nav-link">Contact Us</a>
+
+        <div class="logo">
+            RAVIE
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#research">Research</a>
+            <a href="#aerospace">Aerospace</a>
+            <a href="#innovation">Innovation</a>
+            <a href="#about">About</a>
+            <a href="contact.html" class="contact-button">Contact</a>
+        </div>
+
     </nav>
-    <div class="hero">
-        <h1>RAVIE: The Future of Aerospace</h1>
-        <p>Exploring the cosmos through advanced research, venture innovation, and execution.</p>
-    </div>
-    <div class="grid-container">
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-brand">
+                RAVIE
+            </div>
+
+            <h1>
+                Shaping the Future of Aerospace
+            </h1>
+
+            <div class="hero-subtitle">
+                Research • Aerospace • Ventures • Innovation • Execution
+            </div>
+
+            <p class="hero-description">
+                Advancing aerospace science through research, innovation,
+                and the development of next-generation aerospace systems.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#research" class="hero-button primary-button">
+                    Explore RAVIE
+                </a>
+
+                <a href="#research" class="hero-button secondary-button">
+                    Our Research
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RAVIE PILLARS
+    ========================== -->
+
+    <section class="grid-container" id="research">
+
         <div class="card">
             <h2>Research</h2>
-            <p>Pioneering breakthroughs in propulsion, materials science, and orbital mechanics.</p>
+            <p>
+                Advancing knowledge through aerospace research,
+                scientific investigation, and technical development.
+            </p>
         </div>
-        <div class="card">
+
+        <div class="card" id="aerospace">
             <h2>Aerospace</h2>
-            <p>Designing and deploying cutting-edge spacecraft, satellites, and lunar technology.</p>
+            <p>
+                Exploring next-generation aircraft, rotorcraft,
+                unmanned aerial vehicles, and space systems.
+            </p>
         </div>
+
         <div class="card">
-            <h2>Venture</h2>
-            <p>Investing in and supporting emerging startups across the aerospace sector.</p>
+            <h2>Ventures</h2>
+            <p>
+                Exploring opportunities that transform aerospace
+                research and innovation into meaningful ventures.
+            </p>
         </div>
-        <div class="card">
+
+        <div class="card" id="innovation">
             <h2>Innovation</h2>
-            <p>Fostering a culture of creative problem-solving and technological breakthroughs.</p>
+            <p>
+                Developing new ideas, technologies, and approaches
+                to solve complex aerospace challenges.
+            </p>
         </div>
-        <div class="card">
+
+        <div class="card" id="about">
             <h2>Execution</h2>
-            <p>Delivering complex aerospace projects with precision, safety, and operational excellence.</p>
+            <p>
+                Turning research and innovation into practical
+                aerospace projects with precision and purpose.
+            </p>
         </div>
-    </div>
+
+    </section>
+
 </body>
 </html>
