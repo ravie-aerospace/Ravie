@@ -64,12 +64,16 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
             color: #ffffff;
+        }
 
-            font-size: 1.75rem;
-            font-weight: 800;
-
-            letter-spacing: 4px;
+        .logo img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            display: block;
         }
 
         .logo .blue-v {
@@ -1167,13 +1171,15 @@
         }
 
         .footer-logo {
-            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
 
-            font-size: 1.3rem;
-
-            font-weight: 800;
-
-            letter-spacing: 4px;
+        .footer-logo img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            display: block;
         }
 
         .footer-logo .blue-v {
@@ -1224,8 +1230,9 @@
                     1.2rem;
             }
 
-            .logo {
-                font-size: 1.45rem;
+            .logo img {
+                width: 48px;
+                height: 48px;
             }
 
             .nav-links {
@@ -1348,7 +1355,7 @@
     <nav class="navbar">
 
         <a href="#home" class="logo">
-            RA<span class="blue-v">V</span>IE
+            <img src="images/ravie-logo.png" alt="RAVIE Aerospace Logo">
         </a>
 
         <div class="nav-links">
@@ -1909,7 +1916,7 @@
         <div class="footer-container">
 
             <div class="footer-logo">
-                RA<span class="blue-v">V</span>IE
+                <img src="images/ravie-logo.png" alt="RAVIE Aerospace Logo">
             </div>
 
             <div class="footer-text">
