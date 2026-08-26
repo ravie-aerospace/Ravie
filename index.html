@@ -38,13 +38,14 @@
 
 
         /* =====================================================
-           NAVIGATION
+           NAVBAR
         ===================================================== */
 
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
             height: 76px;
 
@@ -54,7 +55,7 @@
 
             padding: 0 5%;
 
-            background: rgba(4, 12, 22, 0.92);
+            background: rgba(4, 12, 22, 0.94);
             backdrop-filter: blur(14px);
 
             border-bottom: 1px solid rgba(56, 189, 248, 0.12);
@@ -64,12 +65,13 @@
 
         .logo {
             color: #ffffff;
+
             font-size: 1.75rem;
             font-weight: 800;
+
             letter-spacing: 4px;
         }
 
-        /* RAVIE का V blue रहेगा */
         .logo .blue-v {
             color: #38bdf8;
         }
@@ -82,8 +84,10 @@
 
         .nav-links a {
             color: #c2d0de;
+
             font-size: 0.92rem;
             font-weight: 500;
+
             transition: 0.3s ease;
         }
 
@@ -107,7 +111,7 @@
 
 
         /* =====================================================
-           HERO SECTION
+           HERO
         ===================================================== */
 
         .hero {
@@ -122,38 +126,29 @@
             padding: 120px 6% 80px;
 
             background:
-                linear-gradient(
-                    90deg,
-                    rgba(3, 10, 18, 0.96) 0%,
-                    rgba(3, 10, 18, 0.84) 38%,
-                    rgba(3, 10, 18, 0.38) 72%,
-                    rgba(3, 10, 18, 0.72) 100%
-                ),
-                url("https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=2200&q=90")
-                center center / cover no-repeat;
-        }
-
-        /* Dark blue overlay */
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-
-            background:
                 radial-gradient(
-                    circle at 72% 48%,
-                    rgba(56, 189, 248, 0.13),
+                    circle at 75% 45%,
+                    rgba(25, 105, 160, 0.20),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(56, 189, 248, 0.08),
                     transparent 30%
+                ),
+                linear-gradient(
+                    180deg,
+                    #040b14 0%,
+                    #071625 55%,
+                    #050d18 100%
                 );
-
-            pointer-events: none;
         }
 
         /* Technical grid */
 
         .hero::before {
             content: "";
+
             position: absolute;
             inset: 0;
 
@@ -170,6 +165,38 @@
 
             background-size: 55px 55px;
 
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent
+                );
+
+            pointer-events: none;
+        }
+
+        /* Horizon glow */
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 900px;
+            height: 300px;
+
+            right: -200px;
+            bottom: -120px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    ellipse,
+                    rgba(56, 189, 248, 0.13),
+                    transparent 65%
+                );
+
             pointer-events: none;
         }
 
@@ -180,17 +207,18 @@
             margin: auto;
 
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         .hero-content {
-            max-width: 720px;
+            max-width: 700px;
         }
 
         .hero-label {
             display: inline-block;
 
             margin-bottom: 1.2rem;
+
             padding: 0.42rem 0.8rem;
 
             border: 1px solid rgba(56, 189, 248, 0.45);
@@ -200,13 +228,18 @@
 
             font-size: 0.75rem;
             font-weight: 700;
+
             letter-spacing: 3px;
         }
 
         .hero h1 {
             color: #ffffff;
 
-            font-size: clamp(3.1rem, 7vw, 6.2rem);
+            font-size: clamp(
+                3.1rem,
+                7vw,
+                6.2rem
+            );
 
             line-height: 0.98;
 
@@ -223,7 +256,6 @@
             color: #d8e8f5;
 
             font-size: 1rem;
-
             font-weight: 600;
 
             letter-spacing: 1.7px;
@@ -286,61 +318,376 @@
 
 
         /* =====================================================
-           HERO DRONE FRAME
+           DRONE VISUAL
+           ORIGINAL CSS / SVG STYLE
         ===================================================== */
 
-        .drone-frame {
+        .drone-area {
             position: absolute;
 
-            right: 4%;
+            right: 2%;
             top: 50%;
 
-            width: 44%;
-            height: 430px;
+            width: 48%;
+            height: 500px;
 
             transform: translateY(-50%);
 
-            border: 1px solid rgba(56, 189, 248, 0.14);
+            z-index: 2;
 
             pointer-events: none;
-
-            z-index: 1;
         }
 
-        .drone-frame::before,
-        .drone-frame::after {
-            content: "";
+        /* Orbital rings */
 
+        .orbit {
             position: absolute;
 
-            width: 35px;
-            height: 35px;
+            left: 50%;
+            top: 50%;
 
-            border-color: rgba(56, 189, 248, 0.65);
-            border-style: solid;
+            border: 1px solid rgba(
+                56,
+                189,
+                248,
+                0.16
+            );
+
+            border-radius: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(-15deg);
         }
 
-        .drone-frame::before {
-            top: -1px;
-            left: -1px;
-
-            border-width: 1px 0 0 1px;
+        .orbit-1 {
+            width: 560px;
+            height: 220px;
         }
 
-        .drone-frame::after {
-            right: -1px;
-            bottom: -1px;
+        .orbit-2 {
+            width: 470px;
+            height: 180px;
 
-            border-width: 0 1px 1px 0;
+            transform:
+                translate(-50%, -50%)
+                rotate(18deg);
         }
 
-        .drone-info {
+        .orbit-3 {
+            width: 350px;
+            height: 140px;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(-35deg);
+        }
+
+        /* Drone body */
+
+        .drone {
             position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            width: 360px;
+            height: 210px;
+
+            transform:
+                translate(-50%, -50%);
+
+            filter:
+                drop-shadow(
+                    0 25px 30px
+                    rgba(0,0,0,0.55)
+                );
+        }
+
+        .drone-body {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            width: 190px;
+            height: 78px;
+
+            transform:
+                translate(-50%, -50%)
+                perspective(300px)
+                rotateX(8deg);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #d9e2e8,
+                    #687786 42%,
+                    #202d38 80%
+                );
+
+            border-radius:
+                48% 48%
+                42% 42%;
+
+            border: 1px solid #b7c5ce;
+
+            box-shadow:
+                inset 0 8px 15px
+                rgba(255,255,255,0.18),
+
+                inset 0 -10px 20px
+                rgba(0,0,0,0.35);
+        }
+
+        /* Front camera */
+
+        .camera {
+            position: absolute;
+
+            left: 50%;
+            bottom: -31px;
+
+            width: 55px;
+            height: 55px;
+
+            transform:
+                translateX(-50%);
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #52687b,
+                    #111b24 58%,
+                    #05090d 80%
+                );
+
+            border:
+                2px solid #657988;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 8px 16px
+                rgba(0,0,0,0.55);
+        }
+
+        .camera-lens {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            width: 24px;
+            height: 24px;
+
+            transform:
+                translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #a8eaff,
+                    #123c59 28%,
+                    #02070c 70%
+                );
+
+            border: 2px solid #243d4d;
+        }
+
+        /* Drone arms */
+
+        .arm {
+            position: absolute;
+
+            height: 13px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #263641,
+                    #718390,
+                    #263641
+                );
+
+            border-radius: 20px;
+
+            border: 1px solid #566b79;
+        }
+
+        .arm-left-front {
+            width: 130px;
+
+            left: 18px;
+            top: 57px;
+
+            transform:
+                rotate(17deg);
+        }
+
+        .arm-right-front {
+            width: 130px;
+
+            right: 18px;
+            top: 57px;
+
+            transform:
+                rotate(-17deg);
+        }
+
+        .arm-left-back {
+            width: 125px;
+
+            left: 20px;
+            bottom: 58px;
+
+            transform:
+                rotate(-17deg);
+        }
+
+        .arm-right-back {
+            width: 125px;
 
             right: 20px;
-            bottom: 18px;
+            bottom: 58px;
 
-            color: rgba(125, 211, 252, 0.75);
+            transform:
+                rotate(17deg);
+        }
+
+        /* Motors */
+
+        .motor {
+            position: absolute;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #718492 0 30%,
+                    #182630 34% 65%,
+                    #050a0f 68%
+                );
+
+            border: 2px solid #536875;
+        }
+
+        .motor-1 {
+            left: 0;
+            top: 43px;
+        }
+
+        .motor-2 {
+            right: 0;
+            top: 43px;
+        }
+
+        .motor-3 {
+            left: 3px;
+            bottom: 43px;
+        }
+
+        .motor-4 {
+            right: 3px;
+            bottom: 43px;
+        }
+
+        /* Propellers */
+
+        .propeller {
+            position: absolute;
+
+            width: 105px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            border-top:
+                2px solid
+                rgba(180, 225, 245, 0.55);
+
+            border-bottom:
+                2px solid
+                rgba(180, 225, 245, 0.25);
+        }
+
+        .prop-1 {
+            left: -37px;
+            top: 53px;
+
+            transform: rotate(-9deg);
+        }
+
+        .prop-2 {
+            right: -37px;
+            top: 53px;
+
+            transform: rotate(9deg);
+        }
+
+        .prop-3 {
+            left: -34px;
+            bottom: 53px;
+
+            transform: rotate(9deg);
+        }
+
+        .prop-4 {
+            right: -34px;
+            bottom: 53px;
+
+            transform: rotate(-9deg);
+        }
+
+        /* Red navigation lights */
+
+        .nav-light {
+            position: absolute;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #ff5c5c;
+
+            box-shadow:
+                0 0 13px
+                rgba(255,80,80,0.8);
+        }
+
+        .light-left {
+            left: 22px;
+            top: 68px;
+        }
+
+        .light-right {
+            right: 22px;
+            top: 68px;
+        }
+
+        /* Drone HUD */
+
+        .hud {
+            position: absolute;
+
+            right: 4%;
+            bottom: 5%;
+
+            padding: 0.65rem 0.9rem;
+
+            border-left: 2px solid #38bdf8;
+
+            color: #78bde0;
+
+            background:
+                rgba(3,10,18,0.55);
 
             font-size: 0.65rem;
 
@@ -374,7 +721,6 @@
             color: #38bdf8;
 
             font-size: 0.72rem;
-
             font-weight: 700;
 
             letter-spacing: 3px;
@@ -387,7 +733,12 @@
         .section-heading h2 {
             color: #ffffff;
 
-            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-size:
+                clamp(
+                    2rem,
+                    4vw,
+                    3.2rem
+                );
 
             line-height: 1.15;
 
@@ -408,14 +759,20 @@
         .about {
             background: #071321;
 
-            border-top: 1px solid rgba(255,255,255,0.04);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-top:
+                1px solid
+                rgba(255,255,255,0.04);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.04);
         }
 
         .about-grid {
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr;
 
             gap: 4rem;
 
@@ -440,9 +797,13 @@
                     #081522
                 );
 
-            border: 1px solid #1c354d;
+            border:
+                1px solid
+                #1c354d;
 
-            border-left: 3px solid #38bdf8;
+            border-left:
+                3px solid
+                #38bdf8;
 
             border-radius: 5px;
         }
@@ -476,7 +837,7 @@
             background:
                 radial-gradient(
                     circle at center,
-                    rgba(56, 189, 248, 0.13),
+                    rgba(56,189,248,0.13),
                     transparent 38%
                 ),
                 linear-gradient(
@@ -491,22 +852,26 @@
 
             position: absolute;
 
-            left: 0;
-            right: 0;
-            bottom: -150px;
+            left: -10%;
+            right: -10%;
+            bottom: -160px;
 
             height: 300px;
 
             border-radius: 50%;
 
-            border-top: 1px solid rgba(56, 189, 248, 0.18);
+            border-top:
+                1px solid
+                rgba(56,189,248,0.20);
 
             box-shadow:
-                0 -30px 100px rgba(56, 189, 248, 0.08);
+                0 -30px 100px
+                rgba(56,189,248,0.08);
         }
 
         .vision-content {
             position: relative;
+
             z-index: 2;
 
             max-width: 850px;
@@ -517,7 +882,12 @@
         .vision-content h2 {
             color: #ffffff;
 
-            font-size: clamp(2.3rem, 5vw, 4rem);
+            font-size:
+                clamp(
+                    2.3rem,
+                    5vw,
+                    4rem
+                );
 
             line-height: 1.12;
 
@@ -566,7 +936,9 @@
                     #081522
                 );
 
-            border: 1px solid #1a3046;
+            border:
+                1px solid
+                #1a3046;
 
             border-radius: 6px;
 
@@ -582,7 +954,8 @@
             border-color: #38bdf8;
 
             box-shadow:
-                0 12px 35px rgba(0,0,0,0.25);
+                0 12px 35px
+                rgba(0,0,0,0.25);
         }
 
         .pillar-number {
@@ -632,11 +1005,18 @@
         }
 
         .research-card {
-            overflow: hidden;
+            padding: 2rem;
 
-            background: #091827;
+            background:
+                linear-gradient(
+                    145deg,
+                    #0a1929,
+                    #07131f
+                );
 
-            border: 1px solid #1b3249;
+            border:
+                1px solid
+                #1b3249;
 
             border-radius: 6px;
 
@@ -649,21 +1029,28 @@
             transform: translateY(-5px);
         }
 
-        .research-image {
-            width: 100%;
-            height: 190px;
+        .research-icon {
+            width: 55px;
+            height: 55px;
 
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            display: block;
+            margin-bottom: 1.4rem;
 
-            filter:
-                brightness(0.72)
-                saturate(0.75);
-        }
+            border:
+                1px solid
+                rgba(56,189,248,0.3);
 
-        .research-content {
-            padding: 1.6rem;
+            color: #38bdf8;
+
+            font-size: 1.5rem;
+
+            border-radius: 5px;
+
+            background:
+                rgba(56,189,248,0.05);
         }
 
         .research-card h3 {
@@ -719,13 +1106,19 @@
 
         .cta-container {
             max-width: 850px;
+
             margin: auto;
         }
 
         .cta h2 {
             color: #ffffff;
 
-            font-size: clamp(2.1rem, 4vw, 3.4rem);
+            font-size:
+                clamp(
+                    2.1rem,
+                    4vw,
+                    3.4rem
+                );
 
             line-height: 1.15;
 
@@ -735,7 +1128,9 @@
         .cta p {
             max-width: 650px;
 
-            margin: 0 auto 2rem;
+            margin:
+                0 auto
+                2rem;
 
             color: #91a5b8;
 
@@ -752,7 +1147,9 @@
 
             background: #030912;
 
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top:
+                1px solid
+                rgba(255,255,255,0.06);
         }
 
         .footer-container {
@@ -796,6 +1193,11 @@
 
         @media (max-width: 1050px) {
 
+            .drone-area {
+                width: 52%;
+                opacity: 0.65;
+            }
+
             .pillar-grid {
                 grid-template-columns:
                     repeat(2, 1fr);
@@ -804,11 +1206,6 @@
             .research-grid {
                 grid-template-columns:
                     repeat(2, 1fr);
-            }
-
-            .drone-frame {
-                width: 48%;
-                opacity: 0.55;
             }
         }
 
@@ -821,7 +1218,10 @@
 
             .navbar {
                 height: 68px;
-                padding: 0 1.2rem;
+
+                padding:
+                    0
+                    1.2rem;
             }
 
             .logo {
@@ -843,19 +1243,11 @@
                     105px
                     1.4rem
                     65px;
-
-                background:
-                    linear-gradient(
-                        180deg,
-                        rgba(3,10,18,0.93),
-                        rgba(3,10,18,0.78)
-                    ),
-                    url("https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1400&q=85")
-                    center center / cover no-repeat;
             }
 
             .hero-content {
                 text-align: center;
+
                 margin: auto;
             }
 
@@ -870,6 +1262,7 @@
 
             .hero-subtitle {
                 font-size: 0.82rem;
+
                 line-height: 1.7;
             }
 
@@ -881,8 +1274,37 @@
                 justify-content: center;
             }
 
-            .drone-frame {
-                display: none;
+            .drone-area {
+                position: absolute;
+
+                width: 100%;
+                height: 330px;
+
+                right: 0;
+                top: auto;
+                bottom: -50px;
+
+                transform: none;
+
+                opacity: 0.30;
+            }
+
+            .drone {
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.72);
+            }
+
+            .orbit-1 {
+                width: 420px;
+            }
+
+            .orbit-2 {
+                width: 350px;
+            }
+
+            .orbit-3 {
+                width: 270px;
             }
 
             .section {
@@ -893,6 +1315,7 @@
 
             .about-grid {
                 grid-template-columns: 1fr;
+
                 gap: 2rem;
             }
 
@@ -904,12 +1327,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .research-image {
-                height: 210px;
-            }
-
             .footer-container {
                 flex-direction: column;
+
                 text-align: center;
             }
         }
@@ -986,21 +1406,29 @@
                 </h1>
 
                 <div class="hero-subtitle">
+
                     RESEARCH
                     &nbsp;•&nbsp;
+
                     AEROSPACE
                     &nbsp;•&nbsp;
+
                     VENTURES
                     &nbsp;•&nbsp;
+
                     INNOVATION
                     &nbsp;•&nbsp;
+
                     EXECUTION
+
                 </div>
 
                 <p class="hero-description">
+
                     RAVIE explores the frontiers of aerospace through
                     research, engineering, innovation, and the development
                     of next-generation aerospace systems.
+
                 </p>
 
                 <div class="hero-buttons">
@@ -1022,12 +1450,68 @@
         </div>
 
 
-        <!-- Technical Drone Frame -->
+        <!-- =================================================
+             ORIGINAL DRONE VISUAL
+        ================================================== -->
 
-        <div class="drone-frame">
+        <div class="drone-area">
 
-            <div class="drone-info">
-                AEROSPACE SYSTEM / RAVIE
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+
+
+            <div class="drone">
+
+                <!-- Arms -->
+
+                <div class="arm arm-left-front"></div>
+                <div class="arm arm-right-front"></div>
+
+                <div class="arm arm-left-back"></div>
+                <div class="arm arm-right-back"></div>
+
+
+                <!-- Motors -->
+
+                <div class="motor motor-1"></div>
+                <div class="motor motor-2"></div>
+                <div class="motor motor-3"></div>
+                <div class="motor motor-4"></div>
+
+
+                <!-- Propellers -->
+
+                <div class="propeller prop-1"></div>
+                <div class="propeller prop-2"></div>
+                <div class="propeller prop-3"></div>
+                <div class="propeller prop-4"></div>
+
+
+                <!-- Navigation lights -->
+
+                <div class="nav-light light-left"></div>
+                <div class="nav-light light-right"></div>
+
+
+                <!-- Main body -->
+
+                <div class="drone-body"></div>
+
+
+                <!-- Camera -->
+
+                <div class="camera">
+
+                    <div class="camera-lens"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hud">
+                RAVIE / UAV SYSTEM / 001
             </div>
 
         </div>
@@ -1039,7 +1523,8 @@
          ABOUT
     ====================================================== -->
 
-    <section class="section about" id="about">
+    <section class="section about"
+             id="about">
 
         <div class="section-container">
 
@@ -1114,7 +1599,8 @@
          VISION
     ====================================================== -->
 
-    <section class="section vision" id="vision">
+    <section class="section vision"
+             id="vision">
 
         <div class="section-container">
 
@@ -1173,8 +1659,6 @@
             <div class="pillar-grid">
 
 
-                <!-- 01 -->
-
                 <div class="pillar-card">
 
                     <div class="pillar-number">
@@ -1193,8 +1677,6 @@
                 </div>
 
 
-                <!-- 02 -->
-
                 <div class="pillar-card">
 
                     <div class="pillar-number">
@@ -1212,8 +1694,6 @@
 
                 </div>
 
-
-                <!-- 03 -->
 
                 <div class="pillar-card">
 
@@ -1234,8 +1714,6 @@
                 </div>
 
 
-                <!-- 04 -->
-
                 <div class="pillar-card">
 
                     <div class="pillar-number">
@@ -1253,8 +1731,6 @@
 
                 </div>
 
-
-                <!-- 05 -->
 
                 <div class="pillar-card">
 
@@ -1314,28 +1790,23 @@
 
                 <div class="research-card">
 
-                    <img
-                        class="research-image"
-                        src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=85"
-                        alt="Unmanned aerial system">
-
-                    <div class="research-content">
-
-                        <h3>
-                            Unmanned Aerial Systems
-                        </h3>
-
-                        <p>
-                            Exploring UAV concepts, autonomous aerial
-                            systems, mission applications, and future
-                            unmanned platforms.
-                        </p>
-
-                        <span class="research-tag">
-                            UAV • UAS
-                        </span>
-
+                    <div class="research-icon">
+                        ◇
                     </div>
+
+                    <h3>
+                        Unmanned Aerial Systems
+                    </h3>
+
+                    <p>
+                        Exploring UAV concepts, autonomous aerial
+                        systems, mission applications, and future
+                        unmanned platforms.
+                    </p>
+
+                    <span class="research-tag">
+                        UAV • UAS
+                    </span>
 
                 </div>
 
@@ -1345,58 +1816,48 @@
                 <div class="research-card"
                      id="aerospace">
 
-                    <img
-                        class="research-image"
-                        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=85"
-                        alt="Aerospace landscape">
-
-                    <div class="research-content">
-
-                        <h3>
-                            Rotorcraft & Flight
-                        </h3>
-
-                        <p>
-                            Studying rotorcraft technologies, flight
-                            concepts, aerodynamics, and emerging approaches
-                            to vertical flight.
-                        </p>
-
-                        <span class="research-tag">
-                            Rotorcraft • Flight
-                        </span>
-
+                    <div class="research-icon">
+                        △
                     </div>
+
+                    <h3>
+                        Rotorcraft & Flight
+                    </h3>
+
+                    <p>
+                        Studying rotorcraft technologies, flight
+                        concepts, aerodynamics, and emerging approaches
+                        to vertical flight.
+                    </p>
+
+                    <span class="research-tag">
+                        ROTORCRAFT • FLIGHT
+                    </span>
 
                 </div>
 
 
-                <!-- AEROSPACE SYSTEMS -->
+                <!-- SYSTEMS -->
 
                 <div class="research-card">
 
-                    <img
-                        class="research-image"
-                        src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85"
-                        alt="Aerospace systems">
-
-                    <div class="research-content">
-
-                        <h3>
-                            Aerospace Systems
-                        </h3>
-
-                        <p>
-                            Investigating integrated aerospace systems,
-                            engineering concepts, technologies, and future
-                            operational possibilities.
-                        </p>
-
-                        <span class="research-tag">
-                            Systems • Engineering
-                        </span>
-
+                    <div class="research-icon">
+                        ⬡
                     </div>
+
+                    <h3>
+                        Aerospace Systems
+                    </h3>
+
+                    <p>
+                        Investigating integrated aerospace systems,
+                        engineering concepts, technologies, and future
+                        operational possibilities.
+                    </p>
+
+                    <span class="research-tag">
+                        SYSTEMS • ENGINEERING
+                    </span>
 
                 </div>
 
