@@ -1,1209 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="RAVIE Aerospace — Research, Aerospace, Ventures, Innovation and Execution.">
+        content="RAVIE Aerospace — Research, Aerospace, Ventures, Innovation and Execution.">
 
     <meta name="keywords"
-          content="RAVIE Aerospace, aerospace research, UAV, UAS, rotorcraft, aircraft, aerospace technology">
+        content="RAVIE Aerospace, Aerospace Research, UAV, UAS, Drone, Rotorcraft, Aviation, Aerospace Technology">
 
-    <meta name="author"
-          content="RAVIE Aerospace">
+    <meta name="author" content="RAVIE Aerospace">
 
     <title>RAVIE Aerospace | Shaping the Future of Aerospace</title>
 
-    <style>
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="style.css">
 
-        /* =========================================================
-           RESET
-           ========================================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            background: #07131d;
-            color: #eaf3f8;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-
-        /* =========================================================
-           VARIABLES
-           ========================================================= */
-
-        :root {
-            --bg-main: #07131d;
-            --bg-dark: #040b11;
-            --bg-card: #0b1b27;
-
-            --steel: #b9c8d2;
-            --muted: #8da1af;
-
-            --blue: #45a8e6;
-            --blue-light: #73c8f5;
-            --blue-dark: #176b9f;
-
-            --white: #f4f9fc;
-
-            --border: rgba(130, 170, 195, 0.18);
-
-            --max-width: 1200px;
-        }
-
-
-        /* =========================================================
-           COMMON
-           ========================================================= */
-
-        .container {
-            width: min(
-                1200px,
-                calc(100% - 48px)
-            );
-
-            margin: 0 auto;
-        }
-
-        .accent {
-            color: var(--blue);
-        }
-
-        .eyebrow {
-            color: var(--blue);
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            line-height: 1.1;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-        }
-
-        .section-lead {
-            max-width: 700px;
-            margin: 20px auto 0;
-            color: var(--muted);
-            font-size: 1rem;
-        }
-
-
-        /* =========================================================
-           HEADER
-           ========================================================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            background:
-                rgba(4, 11, 17, 0.88);
-
-            backdrop-filter: blur(16px);
-
-            border-bottom:
-                1px solid var(--border);
-        }
-
-        .header-inner {
-            min-height: 78px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 30px;
-        }
-
-
-        /* =========================================================
-           BRAND
-           ========================================================= */
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo {
-            width: 52px;
-            height: 52px;
-
-            border-radius: 50%;
-
-            object-fit: contain;
-
-            background: #ffffff;
-
-            padding: 3px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.2);
-        }
-
-        .brand-copy {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-copy strong {
-            color: var(--white);
-
-            font-size: 1.35rem;
-
-            letter-spacing: 0.15em;
-
-            line-height: 1;
-        }
-
-        .brand-copy span {
-            color: var(--steel);
-
-            font-size: 0.63rem;
-
-            letter-spacing: 0.08em;
-
-            margin-top: 5px;
-        }
-
-        .brand-copy small {
-            color: var(--blue);
-
-            font-size: 0.55rem;
-
-            letter-spacing: 0.08em;
-
-            margin-top: 2px;
-        }
-
-
-        /* =========================================================
-           NAVIGATION
-           ========================================================= */
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .nav-links a {
-            color: var(--steel);
-
-            font-size: 0.78rem;
-
-            font-weight: 600;
-
-            letter-spacing: 0.05em;
-
-            transition:
-                color 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue-light);
-        }
-
-        .nav-contact {
-            border:
-                1px solid
-                rgba(69,168,230,0.55);
-
-            padding:
-                9px 15px;
-
-            color:
-                var(--blue-light) !important;
-        }
-
-        .nav-contact:hover {
-            background:
-                rgba(69,168,230,0.1);
-        }
-
-
-        /* =========================================================
-           HERO
-           ========================================================= */
-
-        .hero {
-            min-height: 100vh;
-
-            position: relative;
-
-            display: flex;
-            align-items: center;
-
-            overflow: hidden;
-
-            padding-top: 78px;
-
-            background:
-                radial-gradient(
-                    circle at 75% 35%,
-                    rgba(30, 105, 150, 0.18),
-                    transparent 35%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #040b11 0%,
-                    #07131d 50%,
-                    #0a1b27 100%
-                );
-        }
-
-        .hero::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image:
-                linear-gradient(
-                    rgba(255,255,255,0.025) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,0.025) 1px,
-                    transparent 1px
-                );
-
-            background-size:
-                60px 60px;
-
-            mask-image:
-                linear-gradient(
-                    to bottom,
-                    black,
-                    transparent
-                );
-
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-
-            z-index: 2;
-
-            max-width: 720px;
-
-            padding:
-                80px 0;
-        }
-
-        .hero-kicker {
-            color: var(--blue);
-
-            font-size: 0.75rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.3em;
-
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            color: var(--white);
-
-            font-size:
-                clamp(
-                    3rem,
-                    7vw,
-                    6.5rem
-                );
-
-            line-height: 0.95;
-
-            letter-spacing: -0.055em;
-
-            font-weight: 700;
-        }
-
-        .hero h1 .future {
-            color: var(--blue);
-        }
-
-        .hero-rule {
-            width: 100px;
-
-            height: 2px;
-
-            background:
-                var(--blue);
-
-            margin:
-                32px 0 22px;
-        }
-
-        .hero-acronym {
-            color: var(--steel);
-
-            font-size: 0.75rem;
-
-            font-weight: 600;
-
-            letter-spacing: 0.1em;
-
-            text-transform: uppercase;
-        }
-
-        .hero-acronym span {
-            color: var(--blue);
-
-            margin:
-                0 8px;
-        }
-
-        .hero-description {
-            max-width: 650px;
-
-            color: var(--muted);
-
-            font-size: 1.05rem;
-
-            margin-top: 24px;
-        }
-
-
-        /* =========================================================
-           HERO BUTTONS
-           ========================================================= */
-
-        .hero-buttons {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 14px;
-
-            margin-top: 32px;
-        }
-
-        .btn {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            min-height: 46px;
-
-            padding:
-                0 22px;
-
-            font-size: 0.75rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.08em;
-
-            text-transform: uppercase;
-
-            transition:
-                all 0.25s ease;
-        }
-
-        .btn-primary {
-            background:
-                var(--blue);
-
-            color:
-                #03111a;
-        }
-
-        .btn-primary:hover {
-            background:
-                var(--blue-light);
-
-            transform:
-                translateY(-2px);
-        }
-
-        .btn-secondary {
-            border:
-                1px solid
-                rgba(130,170,195,0.4);
-
-            color:
-                var(--steel);
-        }
-
-        .btn-secondary:hover {
-            border-color:
-                var(--blue);
-
-            color:
-                var(--blue-light);
-        }
-
-
-        /* =========================================================
-           HERO DATA
-           ========================================================= */
-
-        .hero-data {
-            position: absolute;
-
-            right: 0;
-            bottom: 0;
-
-            width: 100%;
-
-            display: flex;
-            justify-content: center;
-
-            gap: 55px;
-
-            padding: 18px;
-
-            border-top:
-                1px solid var(--border);
-
-            background:
-                rgba(4,11,17,0.35);
-        }
-
-        .hero-data span {
-            color: #6f8797;
-
-            font-size: 0.62rem;
-
-            text-transform: uppercase;
-
-            letter-spacing: 0.14em;
-        }
-
-
-        /* =========================================================
-           ABOUT / VISION / MISSION
-           ========================================================= */
-
-        .triple-section {
-            padding:
-                110px 0;
-
-            background:
-                #081720;
-        }
-
-        .triple-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 1px;
-
-            background:
-                var(--border);
-        }
-
-        .info-card {
-            background:
-                var(--bg-card);
-
-            padding:
-                42px 34px;
-
-            min-height: 410px;
-        }
-
-        .info-icon {
-            color:
-                var(--blue);
-
-            font-size: 1.5rem;
-
-            margin-bottom: 22px;
-        }
-
-        .info-card h2 {
-            color:
-                var(--white);
-
-            font-size:
-                clamp(
-                    1.5rem,
-                    2.3vw,
-                    2.2rem
-                );
-
-            line-height: 1.15;
-
-            margin-bottom: 22px;
-        }
-
-        .info-card p {
-            color:
-                var(--muted);
-
-            font-size: 0.92rem;
-
-            margin-bottom: 16px;
-        }
-
-
-        /* =========================================================
-           MISSION DETAIL
-           ========================================================= */
-
-        .mission {
-            padding:
-                120px 0;
-
-            background:
-                var(--bg-dark);
-        }
-
-        .mission-grid {
-            display: grid;
-
-            grid-template-columns:
-                0.9fr 1.1fr;
-
-            gap: 90px;
-
-            align-items: center;
-        }
-
-        .mission-quote h2 {
-            color:
-                var(--white);
-
-            font-size:
-                clamp(
-                    2.3rem,
-                    5vw,
-                    4.5rem
-                );
-
-            line-height: 1.02;
-
-            letter-spacing: -0.04em;
-        }
-
-        .mission-copy p {
-            color:
-                var(--muted);
-
-            font-size: 1rem;
-
-            line-height: 1.9;
-        }
-
-        .mission-copy strong {
-            color:
-                var(--steel);
-        }
-
-
-        /* =========================================================
-           FRAMEWORK
-           ========================================================= */
-
-        .framework {
-            padding:
-                120px 0;
-
-            background:
-                #081720;
-        }
-
-        .center-heading {
-            text-align: center;
-
-            max-width: 800px;
-
-            margin:
-                0 auto 60px;
-        }
-
-        .pillar-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(5, 1fr);
-
-            gap: 1px;
-
-            background:
-                var(--border);
-        }
-
-        .pillar {
-            position: relative;
-
-            background:
-                var(--bg-card);
-
-            padding:
-                32px 24px;
-
-            min-height: 320px;
-
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease;
-        }
-
-        .pillar:hover {
-            transform:
-                translateY(-6px);
-
-            background:
-                #102432;
-        }
-
-        .pillar-number {
-            color:
-                #426171;
-
-            font-size: 0.7rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.15em;
-        }
-
-        .pillar-icon {
-            color:
-                var(--blue);
-
-            font-size: 1.8rem;
-
-            margin:
-                30px 0 20px;
-        }
-
-        .pillar h3 {
-            color:
-                var(--white);
-
-            font-size: 1.25rem;
-
-            margin-bottom: 12px;
-        }
-
-        .pillar p {
-            color:
-                var(--muted);
-
-            font-size: 0.82rem;
-
-            line-height: 1.7;
-        }
-
-
-        /* =========================================================
-           RESEARCH
-           ========================================================= */
-
-        .research {
-            padding:
-                120px 0;
-
-            background:
-                var(--bg-dark);
-        }
-
-        .research-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-        .research-card {
-            overflow: hidden;
-
-            background:
-                var(--bg-card);
-
-            border:
-                1px solid var(--border);
-        }
-
-        .research-image {
-            width: 100%;
-
-            height: 240px;
-
-            object-fit: cover;
-
-            background:
-                #0c1c27;
-        }
-
-        .research-content {
-            padding:
-                28px;
-        }
-
-        .research-content h3 {
-            color:
-                var(--white);
-
-            font-size: 1.25rem;
-
-            margin-bottom: 12px;
-        }
-
-        .research-content p {
-            color:
-                var(--muted);
-
-            font-size: 0.85rem;
-
-            line-height: 1.7;
-        }
-
-
-        /* =========================================================
-           CONTACT
-           ========================================================= */
-
-        .contact {
-            padding:
-                110px 0;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #081720,
-                    #0b202d
-                );
-        }
-
-        .contact-box {
-            max-width: 850px;
-
-            margin: 0 auto;
-
-            text-align: center;
-
-            padding:
-                65px 30px;
-
-            border:
-                1px solid var(--border);
-
-            background:
-                rgba(5,15,22,0.55);
-        }
-
-        .contact-box h2 {
-            color:
-                var(--white);
-
-            font-size:
-                clamp(
-                    2rem,
-                    4vw,
-                    3.5rem
-                );
-
-            margin-bottom: 18px;
-        }
-
-        .contact-box p {
-            color:
-                var(--muted);
-
-            max-width: 650px;
-
-            margin:
-                0 auto 28px;
-        }
-
-        .contact-email {
-            display: inline-block;
-
-            color:
-                var(--blue-light);
-
-            font-weight: 700;
-
-            border-bottom:
-                1px solid
-                rgba(115,200,245,0.4);
-
-            padding-bottom: 5px;
-        }
-
-
-        /* =========================================================
-           FOOTER
-           ========================================================= */
-
-        footer {
-            background:
-                #03090e;
-
-            border-top:
-                1px solid var(--border);
-        }
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns:
-                1.4fr 1fr 1fr;
-
-            gap: 50px;
-
-            padding:
-                60px 0;
-        }
-
-        .footer-brand {
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            margin-bottom: 18px;
-        }
-
-        .footer-brand img {
-            width: 54px;
-            height: 54px;
-
-            object-fit: contain;
-
-            background: white;
-
-            border-radius: 50%;
-        }
-
-        .footer-brand strong {
-            display: block;
-
-            color:
-                var(--white);
-
-            letter-spacing:
-                0.15em;
-        }
-
-        .footer-brand span {
-            color:
-                var(--muted);
-
-            font-size:
-                0.68rem;
-        }
-
-        .footer-heading {
-            color:
-                var(--blue);
-
-            font-size:
-                0.72rem;
-
-            font-weight: 700;
-
-            letter-spacing:
-                0.15em;
-
-            text-transform:
-                uppercase;
-
-            margin-bottom:
-                18px;
-        }
-
-        .footer-links {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 9px;
-        }
-
-        .footer-links a {
-            color:
-                var(--muted);
-
-            font-size:
-                0.8rem;
-
-            transition:
-                color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color:
-                var(--blue-light);
-        }
-
-        .footer-description {
-            color:
-                #70879a;
-
-            font-size:
-                0.8rem;
-
-            line-height:
-                1.7;
-        }
-
-        .footer-bottom {
-            padding:
-                20px;
-
-            text-align:
-                center;
-
-            color:
-                #506572;
-
-            font-size:
-                0.7rem;
-
-            border-top:
-                1px solid var(--border);
-        }
-
-
-        /* =========================================================
-           RESPONSIVE
-           ========================================================= */
-
-        @media (max-width: 1000px) {
-
-            .nav-links {
-                gap: 13px;
-            }
-
-            .pillar-grid {
-                grid-template-columns:
-                    repeat(3, 1fr);
-            }
-
-            .research-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-
-        @media (max-width: 800px) {
-
-            .header-inner {
-                min-height: 70px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                min-height: 850px;
-            }
-
-            .hero-content {
-                padding:
-                    100px 0 130px;
-            }
-
-            .hero h1 {
-                font-size:
-                    clamp(
-                        3rem,
-                        13vw,
-                        5rem
-                    );
-            }
-
-            .hero-data {
-                flex-wrap: wrap;
-
-                gap: 12px 25px;
-
-                justify-content:
-                    flex-start;
-            }
-
-            .triple-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-            .mission-grid {
-                grid-template-columns:
-                    1fr;
-
-                gap: 45px;
-            }
-
-            .pillar-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .research-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-        }
-
-
-        @media (max-width: 520px) {
-
-            .container {
-                width:
-                    min(
-                        100% - 30px,
-                        1200px
-                    );
-            }
-
-            .brand-copy span,
-            .brand-copy small {
-                display: none;
-            }
-
-            .brand-logo {
-                width: 45px;
-                height: 45px;
-            }
-
-            .hero-acronym {
-                line-height: 2;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-
-                align-items:
-                    stretch;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .pillar-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-        }
-
-    </style>
 </head>
 
 
 <body>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          HEADER
-         ========================================================= -->
+         ===================================================== -->
 
-    <header>
+    <header class="site-header">
 
         <div class="container header-inner">
 
+
+            <!-- BRAND / LOGO -->
+
             <a href="#home" class="brand">
 
-                <!-- RAVIE LOGO -->
                 <img
-                    class="brand-logo"
-                    src="data:image/jpeg;base64,PASTE_YOUR_EXISTING_RAVIE_LOGO_BASE64_HERE"
+                    src="logo.png"
                     alt="RAVIE Aerospace Logo"
+                    class="brand-logo"
                 >
 
-                <span class="brand-copy">
+                <div class="brand-text">
 
                     <strong>RAVIE</strong>
 
                     <span>
-                        Research Aerospace
+                        RESEARCH AEROSPACE
                     </span>
 
                     <small>
-                        Ventures · Innovation · Execution
+                        VENTURES · INNOVATION · EXECUTION
                     </small>
 
-                </span>
+                </div>
 
             </a>
 
 
-            <nav
-                class="nav-links"
-                aria-label="Primary navigation"
-            >
+            <!-- NAVIGATION -->
 
-                <a href="#home">Home</a>
+            <nav class="navigation">
 
-                <a href="#about">About</a>
+                <a href="#home">
+                    Home
+                </a>
 
-                <a href="#vision">Vision</a>
+                <a href="#about">
+                    About
+                </a>
 
-                <a href="#mission">Mission</a>
+                <a href="#vision">
+                    Vision
+                </a>
 
-                <a href="#framework">Framework</a>
+                <a href="#mission">
+                    Mission
+                </a>
 
-                <a href="#research">Research</a>
+                <a href="#framework">
+                    Framework
+                </a>
 
-                <a
-                    href="#contact"
-                    class="nav-contact"
-                >
-                    Contact Us
+                <a href="#research">
+                    Research
+                </a>
+
+                <a href="#contact" class="contact-nav">
+                    Contact
                 </a>
 
             </nav>
@@ -1213,36 +101,37 @@
     </header>
 
 
-    <!-- =========================================================
-         MAIN
-         ========================================================= -->
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
 
     <main>
 
 
-        <!-- =====================================================
-             HERO
-             ===================================================== -->
+        <!-- =================================================
+             HERO SECTION
+             ================================================= -->
 
-        <section
-            class="hero"
-            id="home"
-        >
+        <section id="home" class="hero-section">
 
-            <div class="container">
+            <div class="hero-grid container">
+
+
+                <!-- HERO LEFT -->
 
                 <div class="hero-content">
 
-                    <div class="hero-kicker">
+                    <p class="hero-label">
                         RAVIE AEROSPACE
-                    </div>
+                    </p>
 
 
                     <h1>
 
                         Shaping the
 
-                        <span class="future">
+                        <span>
                             Future
                         </span>
 
@@ -1251,38 +140,38 @@
                     </h1>
 
 
-                    <div class="hero-rule"></div>
+                    <div class="hero-line"></div>
 
 
-                    <div class="hero-acronym">
+                    <p class="hero-acronym">
 
-                        Research
+                        RESEARCH
 
-                        <span>•</span>
+                        <b>•</b>
 
-                        Aerospace
+                        AEROSPACE
 
-                        <span>•</span>
+                        <b>•</b>
 
-                        Ventures
+                        VENTURES
 
-                        <span>•</span>
+                        <b>•</b>
 
-                        Innovation
+                        INNOVATION
 
-                        <span>•</span>
+                        <b>•</b>
 
-                        Execution
+                        EXECUTION
 
-                    </div>
+                    </p>
 
 
                     <p class="hero-description">
 
-                        RAVIE explores the frontiers
-                        of aerospace through research,
-                        engineering, innovation, and
-                        the development of next-generation
+                        RAVIE explores the frontiers of
+                        aerospace through research,
+                        engineering, innovation, and the
+                        development of next-generation
                         aerospace systems.
 
                     </p>
@@ -1300,7 +189,7 @@
 
                         <a
                             href="#research"
-                            class="btn btn-secondary"
+                            class="btn btn-outline"
                         >
                             Our Research
                         </a>
@@ -1309,64 +198,149 @@
 
                 </div>
 
+
+
+                <!-- HERO RIGHT / DRONE -->
+
+                <div class="hero-visual">
+
+
+                    <!-- RADAR -->
+
+                    <div class="radar-circle radar-one"></div>
+
+                    <div class="radar-circle radar-two"></div>
+
+                    <div class="radar-circle radar-three"></div>
+
+                    <div class="radar-line"></div>
+
+
+
+                    <!-- DRONE -->
+
+                    <div class="drone">
+
+
+                        <!-- LEFT ROTOR -->
+
+                        <div class="rotor rotor-left">
+
+                            <span></span>
+
+                        </div>
+
+
+                        <!-- RIGHT ROTOR -->
+
+                        <div class="rotor rotor-right">
+
+                            <span></span>
+
+                        </div>
+
+
+                        <!-- ARMS -->
+
+                        <div class="drone-arm arm-left"></div>
+
+                        <div class="drone-arm arm-right"></div>
+
+
+                        <!-- BODY -->
+
+                        <div class="drone-body">
+
+                            <div class="drone-camera"></div>
+
+                        </div>
+
+
+                        <!-- LANDING GEAR -->
+
+                        <div class="drone-leg leg-left"></div>
+
+                        <div class="drone-leg leg-right"></div>
+
+
+                    </div>
+
+
+                    <!-- VISUAL LABEL -->
+
+                    <div class="visual-label">
+
+                        NEXT-GENERATION
+
+                        <br>
+
+                        AERIAL SYSTEM
+
+                    </div>
+
+
+                </div>
+
+
             </div>
 
 
-            <div
-                class="hero-data"
-                aria-hidden="true"
-            >
+
+            <!-- HERO BOTTOM STRIP -->
+
+            <div class="hero-bottom">
 
                 <span>
-                    Research Driven
+                    RESEARCH DRIVEN
                 </span>
 
                 <span>
-                    Innovation Focused
+                    INNOVATION FOCUSED
                 </span>
 
                 <span>
-                    Safety First
+                    SAFETY FIRST
                 </span>
 
                 <span>
-                    Future Ready
+                    FUTURE READY
                 </span>
 
             </div>
+
 
         </section>
 
 
-        <!-- =====================================================
+
+        <!-- =================================================
              ABOUT / VISION / MISSION
-             ===================================================== -->
+             ================================================= -->
 
-        <section class="triple-section">
+        <section class="intro-section">
 
-            <div class="container triple-grid">
+            <div class="container intro-grid">
 
 
                 <!-- ABOUT -->
 
-                <article
-                    class="info-card"
-                    id="about"
-                >
+                <article id="about" class="intro-card">
 
-                    <div class="eyebrow">
-                        About RAVIE
-                    </div>
+                    <p class="section-label">
+                        ABOUT RAVIE
+                    </p>
 
-                    <div class="info-icon">
+
+                    <div class="card-symbol">
                         ◉
                     </div>
+
 
                     <h2>
 
                         Building ideas for the
 
-                        <span class="accent">
+                        <span>
                             aerospace future.
                         </span>
 
@@ -1395,37 +369,37 @@
 
                     <p>
 
-                        From unmanned aerial systems
-                        and rotorcraft to advanced
-                        aerospace concepts, RAVIE aims
-                        to explore possibilities beyond
-                        conventional boundaries.
+                        From unmanned aerial systems and
+                        rotorcraft to advanced aerospace
+                        concepts, RAVIE aims to explore
+                        possibilities beyond conventional
+                        boundaries.
 
                     </p>
 
                 </article>
 
 
+
                 <!-- VISION -->
 
-                <article
-                    class="info-card"
-                    id="vision"
-                >
+                <article id="vision" class="intro-card">
 
-                    <div class="eyebrow">
-                        Our Vision
-                    </div>
+                    <p class="section-label">
+                        OUR VISION
+                    </p>
 
-                    <div class="info-icon">
+
+                    <div class="card-symbol">
                         ◎
                     </div>
+
 
                     <h2>
 
                         To explore what comes
 
-                        <span class="accent">
+                        <span>
                             next.
                         </span>
 
@@ -1446,20 +420,20 @@
                 </article>
 
 
+
                 <!-- MISSION -->
 
-                <article
-                    class="info-card"
-                    id="mission"
-                >
+                <article id="mission" class="intro-card">
 
-                    <div class="eyebrow">
-                        Our Mission
-                    </div>
+                    <p class="section-label">
+                        OUR MISSION
+                    </p>
 
-                    <div class="info-icon">
+
+                    <div class="card-symbol">
                         ⌁
                     </div>
+
 
                     <h2>
 
@@ -1467,7 +441,7 @@
 
                         Innovate.
 
-                        <span class="accent">
+                        <span>
                             Execute.
                         </span>
 
@@ -1476,8 +450,8 @@
 
                     <p>
 
-                        To advance aerospace science
-                        and engineering through research,
+                        To advance aerospace science and
+                        engineering through research,
                         validation, innovation, and the
                         development of next-generation
                         aircraft, rotorcraft, unmanned
@@ -1488,37 +462,42 @@
 
                 </article>
 
+
             </div>
 
         </section>
 
 
-        <!-- =====================================================
-             MISSION DETAIL
-             ===================================================== -->
 
-        <section class="mission">
+        <!-- =================================================
+             RAVIE APPROACH
+             ================================================= -->
+
+        <section class="mission-section">
 
             <div class="container mission-grid">
 
 
-                <div class="mission-quote">
+                <!-- LEFT -->
 
-                    <div class="eyebrow">
-                        The RAVIE Approach
-                    </div>
+                <div class="mission-heading">
+
+                    <p class="section-label">
+                        THE RAVIE APPROACH
+                    </p>
+
 
                     <h2>
 
                         From
 
-                        <span class="accent">
+                        <span>
                             research
                         </span>
 
                         to
 
-                        <span class="accent">
+                        <span>
                             real-world
                         </span>
 
@@ -1529,7 +508,10 @@
                 </div>
 
 
-                <div class="mission-copy">
+
+                <!-- RIGHT -->
+
+                <div class="mission-text">
 
                     <p>
 
@@ -1543,9 +525,6 @@
                         opportunities behind them.
 
                     </p>
-
-
-                    <br>
 
 
                     <p>
@@ -1564,181 +543,214 @@
 
                 </div>
 
+
             </div>
 
         </section>
 
 
-        <!-- =====================================================
-             FRAMEWORK
-             ===================================================== -->
 
-        <section
-            class="framework"
-            id="framework"
-        >
+        <!-- =================================================
+             FRAMEWORK
+             ================================================= -->
+
+        <section id="framework" class="framework-section">
 
             <div class="container">
 
 
-                <div class="center-heading">
+                <!-- SECTION HEADING -->
 
-                    <div class="eyebrow">
-                        The RAVIE Framework
-                    </div>
+                <div class="section-heading">
 
-                    <h2 class="section-title">
+                    <p class="section-label">
+                        THE RAVIE FRAMEWORK
+                    </p>
+
+
+                    <h2>
 
                         Five Pillars.
 
-                        <span class="accent">
+                        <span>
                             One Vision.
                         </span>
 
                     </h2>
 
-                    <p class="section-lead">
 
-                        Five interconnected pillars
-                        guide RAVIE's approach to
-                        aerospace research,
-                        innovation, and execution.
+                    <p>
+
+                        Five interconnected pillars guide
+                        RAVIE's approach to aerospace
+                        research, innovation, and execution.
 
                     </p>
 
                 </div>
 
 
+
+                <!-- PILLARS -->
+
                 <div class="pillar-grid">
 
 
-                    <article class="pillar">
+                    <!-- PILLAR 01 -->
 
-                        <div class="pillar-number">
+                    <article class="pillar-card">
+
+                        <small>
                             01
-                        </div>
+                        </small>
+
 
                         <div class="pillar-icon">
                             ⌕
                         </div>
 
+
                         <h3>
                             Research
                         </h3>
 
+
                         <p>
 
                             Scientific investigation,
-                            aerospace research,
-                            technical analysis,
-                            and knowledge development.
+                            aerospace research, technical
+                            analysis, and knowledge
+                            development.
 
                         </p>
 
                     </article>
 
 
-                    <article class="pillar">
 
-                        <div class="pillar-number">
+                    <!-- PILLAR 02 -->
+
+                    <article class="pillar-card">
+
+                        <small>
                             02
-                        </div>
+                        </small>
+
 
                         <div class="pillar-icon">
                             ✈
                         </div>
 
+
                         <h3>
                             Aerospace
                         </h3>
 
+
                         <p>
 
-                            Exploring aircraft,
-                            rotorcraft, UAVs,
-                            aerospace systems,
-                            and future flight concepts.
+                            Exploring aircraft, rotorcraft,
+                            UAVs, aerospace systems, and
+                            future flight concepts.
 
                         </p>
 
                     </article>
 
 
-                    <article class="pillar">
 
-                        <div class="pillar-number">
+                    <!-- PILLAR 03 -->
+
+                    <article class="pillar-card">
+
+                        <small>
                             03
-                        </div>
+                        </small>
+
 
                         <div class="pillar-icon">
                             ◇
                         </div>
 
+
                         <h3>
                             Ventures
                         </h3>
 
+
                         <p>
 
-                            Identifying opportunities
-                            where aerospace research
-                            and innovation can become
-                            meaningful ventures.
+                            Identifying opportunities where
+                            aerospace research and innovation
+                            can become meaningful ventures.
 
                         </p>
 
                     </article>
 
 
-                    <article class="pillar">
 
-                        <div class="pillar-number">
+                    <!-- PILLAR 04 -->
+
+                    <article class="pillar-card">
+
+                        <small>
                             04
-                        </div>
+                        </small>
+
 
                         <div class="pillar-icon">
                             ✦
                         </div>
 
+
                         <h3>
                             Innovation
                         </h3>
 
+
                         <p>
 
                             Developing new ideas,
-                            technologies, methods,
-                            and approaches to complex
-                            aerospace challenges.
+                            technologies, methods, and
+                            approaches to complex aerospace
+                            challenges.
 
                         </p>
 
                     </article>
 
 
-                    <article class="pillar">
 
-                        <div class="pillar-number">
+                    <!-- PILLAR 05 -->
+
+                    <article class="pillar-card">
+
+                        <small>
                             05
-                        </div>
+                        </small>
+
 
                         <div class="pillar-icon">
                             ↗
                         </div>
 
+
                         <h3>
                             Execution
                         </h3>
 
+
                         <p>
 
-                            Turning ideas and research
-                            into practical projects
-                            through disciplined execution.
+                            Turning ideas and research into
+                            practical projects through
+                            disciplined execution.
 
                         </p>
 
                     </article>
+
 
                 </div>
 
@@ -1747,62 +759,73 @@
         </section>
 
 
-        <!-- =====================================================
-             RESEARCH AREAS
-             ===================================================== -->
 
-        <section
-            class="research"
-            id="research"
-        >
+        <!-- =================================================
+             RESEARCH SECTION
+             ================================================= -->
+
+        <section id="research" class="research-section">
 
             <div class="container">
 
 
-                <div class="center-heading">
+                <!-- SECTION HEADING -->
 
-                    <div class="eyebrow">
-                        Research Areas
-                    </div>
+                <div class="section-heading">
 
-                    <h2 class="section-title">
+                    <p class="section-label">
+                        RESEARCH AREAS
+                    </p>
+
+
+                    <h2>
 
                         Exploring the
 
-                        <span class="accent">
+                        <span>
                             Aerospace Frontier.
                         </span>
 
                     </h2>
 
-                    <p class="section-lead">
 
-                        RAVIE's research interests
-                        focus on technologies capable
-                        of shaping the future of flight
-                        and aerospace systems.
+                    <p>
+
+                        RAVIE's research interests focus
+                        on technologies capable of shaping
+                        the future of flight and aerospace
+                        systems.
 
                     </p>
 
                 </div>
 
 
+
+                <!-- RESEARCH CARDS -->
+
                 <div class="research-grid">
 
 
+                    <!-- RESEARCH 01 -->
+
                     <article class="research-card">
 
-                        <img
-                            class="research-image"
-                            src="YOUR-RESEARCH-IMAGE-1.jpg"
-                            alt="Aerospace Research"
-                        >
+                        <div class="research-image research-uav">
+
+                            <div class="research-symbol">
+                                ◈
+                            </div>
+
+                        </div>
+
 
                         <div class="research-content">
 
                             <h3>
                                 Unmanned Aerial Systems
                             </h3>
+
 
                             <p>
 
@@ -1819,13 +842,19 @@
                     </article>
 
 
+
+                    <!-- RESEARCH 02 -->
+
                     <article class="research-card">
 
-                        <img
-                            class="research-image"
-                            src="YOUR-RESEARCH-IMAGE-2.jpg"
-                            alt="Aircraft and Rotorcraft"
-                        >
+                        <div class="research-image research-aircraft">
+
+                            <div class="research-symbol">
+                                ✈
+                            </div>
+
+                        </div>
+
 
                         <div class="research-content">
 
@@ -1833,12 +862,12 @@
                                 Aircraft & Rotorcraft
                             </h3>
 
+
                             <p>
 
                                 Exploring aircraft,
-                                rotorcraft, flight
-                                systems, safety,
-                                performance, and
+                                rotorcraft, flight systems,
+                                safety, performance, and
                                 advanced flight concepts.
 
                             </p>
@@ -1848,19 +877,26 @@
                     </article>
 
 
+
+                    <!-- RESEARCH 03 -->
+
                     <article class="research-card">
 
-                        <img
-                            class="research-image"
-                            src="YOUR-RESEARCH-IMAGE-3.jpg"
-                            alt="Future Aerospace Technology"
-                        >
+                        <div class="research-image research-future">
+
+                            <div class="research-symbol">
+                                ◇
+                            </div>
+
+                        </div>
+
 
                         <div class="research-content">
 
                             <h3>
                                 Future Aerospace
                             </h3>
+
 
                             <p>
 
@@ -1884,48 +920,89 @@
         </section>
 
 
-        <!-- =====================================================
-             CONTACT
-             ===================================================== -->
 
-        <section
-            class="contact"
-            id="contact"
-        >
+        <!-- =================================================
+             CONTACT SECTION
+             ================================================= -->
+
+        <section id="contact" class="contact-section">
 
             <div class="container">
 
+
                 <div class="contact-box">
 
-                    <div class="eyebrow">
-                        Contact RAVIE
-                    </div>
+
+                    <p class="section-label">
+                        CONTACT RAVIE
+                    </p>
+
 
                     <h2>
 
                         Let's explore what comes
 
-                        <span class="accent">
+                        <span>
                             next.
                         </span>
 
                     </h2>
 
-                    <p>
+
+                    <p class="contact-description">
 
                         For research, collaboration,
-                        aerospace innovation, and
-                        future opportunities, connect
-                        with RAVIE Aerospace.
+                        aerospace innovation, and future
+                        opportunities, connect with
+                        RAVIE Aerospace.
 
                     </p>
 
-                    <a
-                        class="contact-email"
-                        href="mailto:contact@ravie-aerospace.com"
-                    >
-                        contact@ravie-aerospace.com
-                    </a>
+
+
+                    <!-- CONTACT DETAILS -->
+
+                    <div class="contact-details">
+
+
+                        <!-- EMAIL -->
+
+                        <div class="contact-item">
+
+                            <span>
+                                EMAIL
+                            </span>
+
+
+                            <a
+                                href="mailto:ravie.aerospace@gmail.com"
+                            >
+                                ravie.aerospace@gmail.com
+                            </a>
+
+                        </div>
+
+
+
+                        <!-- CELLPHONE -->
+
+                        <div class="contact-item">
+
+                            <span>
+                                CELLPHONE
+                            </span>
+
+
+                            <a
+                                href="tel:+919918075777"
+                            >
+                                +91 9918075777
+                            </a>
+
+                        </div>
+
+
+                    </div>
 
                 </div>
 
@@ -1937,23 +1014,30 @@
     </main>
 
 
-    <!-- =========================================================
+
+    <!-- =====================================================
          FOOTER
-         ========================================================= -->
+         ===================================================== -->
 
     <footer>
+
 
         <div class="container footer-grid">
 
 
-            <div>
+            <!-- FOOTER BRAND -->
+
+            <div class="footer-brand-area">
+
 
                 <div class="footer-brand">
 
+
                     <img
-                        src="YOUR-RAVIE-LOGO-HERE.png"
+                        src="logo.png"
                         alt="RAVIE Aerospace Logo"
                     >
+
 
                     <div>
 
@@ -1962,22 +1046,40 @@
                         </strong>
 
                         <span>
-                            Research · Aerospace · Ventures
-                            · Innovation · Execution
+                            RESEARCH · AEROSPACE · VENTURES
                         </span>
 
                     </div>
 
+
                 </div>
+
+
+                <p>
+
+                    Research-driven.
+                    Future-focused.
+
+                    Exploring the next generation
+                    of aerospace systems and
+                    technologies.
+
+                </p>
+
 
             </div>
 
 
+
+            <!-- QUICK LINKS -->
+
             <div>
 
-                <div class="footer-heading">
-                    Quick Links
-                </div>
+
+                <h3>
+                    QUICK LINKS
+                </h3>
+
 
                 <div class="footer-links">
 
@@ -2011,31 +1113,49 @@
 
                 </div>
 
+
             </div>
 
 
+
+            <!-- FOOTER CONTACT -->
+
             <div>
 
-                <div class="footer-heading">
-                    RAVIE
+
+                <h3>
+                    CONTACT
+                </h3>
+
+
+                <div class="footer-contact">
+
+
+                    <a
+                        href="mailto:ravie.aerospace@gmail.com"
+                    >
+                        ravie.aerospace@gmail.com
+                    </a>
+
+
+                    <a
+                        href="tel:+919918075777"
+                    >
+                        +91 9918075777
+                    </a>
+
+
                 </div>
 
-                <p class="footer-description">
-
-                    Research-driven.
-                    Future-focused.
-
-                    Exploring the next generation
-                    of aerospace systems and
-                    technologies.
-
-                </p>
 
             </div>
 
 
         </div>
 
+
+
+        <!-- COPYRIGHT -->
 
         <div class="footer-bottom">
 
@@ -2044,8 +1164,11 @@
 
         </div>
 
+
     </footer>
 
 
+
 </body>
+
 </html>
