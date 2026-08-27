@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAVIE Aerospace | Next-Gen Aerospace & Autonomous Systems (Year 2075+)</title>
-    <meta name="description" content="RAVIE — Research, Aerospace, Ventures, Innovation and Execution. Building the next 50 years of futuristic aerospace technology.">
+    <title>RAVIE Aerospace | Advanced Aerospace & Autonomous Systems</title>
+    <meta name="description" content="RAVIE — Research, Aerospace, Ventures, Innovation and Execution. Advanced Defense and Air Mobility Technology.">
     <meta name="theme-color" content="#030b14">
     
-    <!-- Google Fonts for High-Tech Typography -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS RESET & FUTURE SCI-FI THEME VARIABLES */
         :root {
             --bg-dark: #02060e;
-            --bg-card: rgba(10, 20, 38, 0.7);
+            --bg-card: rgba(10, 20, 38, 0.75);
             --border-glow: rgba(0, 210, 255, 0.3);
             --accent-cyan: #00f0ff;
             --accent-blue: #0077ff;
             --accent-purple: #7000ff;
-            --accent-pink: #ff00aa;
             --text-main: #e6edf3;
             --text-muted: #8b9bb4;
             --font-head: 'Orbitron', sans-serif;
@@ -62,7 +60,7 @@
             align-items: center;
         }
 
-        .logo {
+        .brand-name {
             font-family: var(--font-head);
             font-size: 1.8rem;
             font-weight: 900;
@@ -71,7 +69,7 @@
             text-decoration: none;
         }
 
-        .logo span {
+        .brand-name span {
             color: var(--accent-cyan);
             text-shadow: 0 0 10px var(--accent-cyan);
         }
@@ -99,37 +97,22 @@
 
         /* HERO SECTION */
         .hero {
-            min-height: 100vh;
+            min-height: 85vh;
             padding: 140px 5% 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--accent-cyan);
-            border-radius: 50px;
-            color: var(--accent-cyan);
-            font-family: var(--font-head);
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
         }
 
         .hero h1 {
             font-family: var(--font-head);
-            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             font-weight: 900;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 70%, var(--accent-purple) 100%);
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -152,21 +135,27 @@
             border-radius: 4px;
             text-decoration: none;
             cursor: pointer;
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
             transition: all 0.3s ease;
         }
 
         .hero-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.7);
         }
 
-        /* SECTION CONTAINER */
+        /* CONTAINER & TITLES */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 5%;
+        }
+
         .section-title {
             text-align: center;
             font-family: var(--font-head);
             font-size: 2.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: #fff;
             letter-spacing: 2px;
         }
@@ -175,18 +164,12 @@
             text-align: center;
             color: var(--accent-cyan);
             font-size: 1.1rem;
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
 
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 80px 5%;
-        }
-
-        /* SHOWCASE CARDS GRID (5 ITEMS) */
+        /* SHOWCASE CARDS GRID */
         .grid-5 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -200,7 +183,6 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
-            position: relative;
         }
 
         .card:hover {
@@ -211,34 +193,16 @@
 
         .card-img-wrap {
             width: 100%;
-            height: 220px;
+            height: 230px;
             overflow: hidden;
             position: relative;
-            background: #040a17;
+            background: #030814;
         }
 
-        .card-img-wrap img {
+        .card-img-wrap svg {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .card:hover .card-img-wrap img {
-            transform: scale(1.05);
-        }
-
-        .card-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(2, 6, 14, 0.85);
-            border: 1px solid var(--accent-cyan);
-            color: var(--accent-cyan);
-            font-family: var(--font-head);
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 4px;
+            display: block;
         }
 
         .card-body {
@@ -277,35 +241,7 @@
             box-shadow: 0 0 15px var(--accent-cyan);
         }
 
-        /* SPECS SUMMARY BOX */
-        .specs-box {
-            background: linear-gradient(135deg, rgba(10,20,38,0.9), rgba(5,12,24,0.95));
-            border: 1px solid var(--border-glow);
-            border-radius: 16px;
-            padding: 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .spec-item h4 {
-            font-family: var(--font-head);
-            font-size: 2.5rem;
-            color: var(--accent-cyan);
-            text-shadow: 0 0 15px rgba(0,240,255,0.4);
-            margin-bottom: 0.3rem;
-        }
-
-        .spec-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* GENERAL MODAL STYLING */
+        /* MODAL POPUPS */
         .modal {
             display: none;
             position: fixed;
@@ -325,7 +261,7 @@
             background: #081120;
             border: 1px solid var(--accent-cyan);
             border-radius: 12px;
-            max-width: 650px;
+            max-width: 600px;
             width: 100%;
             padding: 2.2rem;
             position: relative;
@@ -367,14 +303,6 @@
             font-weight: 600;
         }
 
-        .contact-info-list a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-info-list span {
-            color: var(--text-muted);
-        }
-
         .form-group {
             margin-bottom: 1.2rem;
             text-align: left;
@@ -399,7 +327,6 @@
             font-family: var(--font-body);
             font-size: 1rem;
             outline: none;
-            transition: all 0.3s ease;
         }
 
         .form-group input:focus, 
@@ -424,25 +351,23 @@
 
         .submit-btn:hover {
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
-            transform: translateY(-2px);
         }
 
         /* FOOTER */
         footer {
             border-top: 1px solid var(--border-glow);
             background: #01040a;
-            padding: 3rem 5%;
+            padding: 2.5rem 5%;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.95rem;
         }
 
-        footer p span {
+        footer span {
             color: var(--accent-cyan);
             cursor: pointer;
         }
 
-        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero h1 { font-size: 2.2rem; }
@@ -452,14 +377,14 @@
 </head>
 <body>
 
-    <!-- HIGH-TECH NAVIGATION BAR -->
+    <!-- NAVIGATION BAR -->
     <header>
-        <a href="#" class="logo">
+        <a href="#" class="brand-name">
             RAVIE <span>AEROSPACE</span>
         </a>
         <ul class="nav-links">
             <li><a href="#about">ओवरव्यू</a></li>
-            <li><a href="#futuristic-tech">एयरोस्पेस तकनीक (2075+)</a></li>
+            <li><a href="#models">मॉडल एवं सिस्टम</a></li>
             <li><a href="#research">रिसर्च व सुरक्षा</a></li>
             <li><a onclick="openContactModal()">संपर्क करें</a></li>
         </ul>
@@ -467,133 +392,155 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="about">
-        <div class="hero-badge">NEXT-GEN AEROSPACE INITIATIVE (2075 VISION)</div>
-        <h1>भविष्य की एयरोस्पेस और स्वायत्त प्रणाली (Next-50 Years Technology)</h1>
+        <h1>उन्नत एयरोस्पेस और स्वायत्त प्रणाली</h1>
         <p>
             RAVIE — <b>Research, Aerospace, Ventures, Innovation & Execution</b><br>
-            हम 50 साल आगे की सोचकर स्वदेशी, अति-यथार्थवादी और एडवांस हाइपरसोनिक ड्रोन, एंटी-ग्रेविटी eVTOL एवं डीप-स्पेस सिस्टम विकसित कर रहे हैं।
+            हम उच्च प्रदर्शन वाले स्टील्थ ड्रोन, स्वायत्त एयर क्राफ्ट और एयर मोबिलिटी सिस्टम का निर्माण व अनुसंधान करते हैं।
         </p>
-        <a href="#futuristic-tech" class="hero-btn">फ्यूचरिस्टिक मॉडल देखें</a>
+        <a href="#models" class="hero-btn">ड्रोन मॉडल देखें</a>
     </section>
 
-    <!-- 5 UNIQUE REALISTIC FUTURISTIC CONCEPTS -->
-    <section class="container" id="futuristic-tech">
-        <h2 class="section-title">Exploring the Aerospace Frontier</h2>
-        <p class="section-subtitle">5 Distinct Next-Gen Defense & Exploration Systems (Year 2075+)</p>
+    <!-- 5 HIGH-TECH DRONE MODELS -->
+    <section class="container" id="models">
+        <h2 class="section-title">एयरोस्पेस मॉडल एवं तकनीक</h2>
+        <p class="section-subtitle">Advanced Autonomous & Tactical Flying Systems</p>
 
         <div class="grid-5">
             
-            <!-- Item 1: Stealth Tactical UAV -->
+            <!-- Item 1: Stealth Tactical Drone -->
             <div class="card">
                 <div class="card-img-wrap">
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='800' height='500' fill='%23030712'/><path d='M 0,250 Q 400,100 800,250 Q 400,400 0,250' fill='none' stroke='%2300f0ff' stroke-width='0.5' opacity='0.2'/><path d='M 400,90 L 680,380 L 520,350 L 400,320 L 280,350 L 120,380 Z' fill='%230b1326' stroke='%2300f0ff' stroke-width='1.5'/><polygon points='400,130 500,330 400,300 300,330' fill='%23122240'/><circle cx='400' cy='230' r='6' fill='%2300f0ff'/><line x1='350' y1='365' x2='450' y2='365' stroke='%2300f0ff' stroke-width='2' opacity='0.8'/><text x='30' y='460' font-family='monospace' font-size='12' fill='%2300f0ff'>MODEL: RAVIE-UAV X1 // STEALTH TACTICAL</text></svg>" alt="Tactical Stealth UAV">
-                    <span class="card-tag">MACH 6.8</span>
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#020612"/>
+                        <!-- Grid Lines -->
+                        <path d="M0,100 H800 M0,250 H800 M0,400 H800 M200,0 V500 M400,0 V500 M600,0 V500" stroke="#00f0ff" stroke-width="0.3" opacity="0.15"/>
+                        <!-- Stealth Wing Body -->
+                        <polygon points="400,80 720,380 500,340 400,310 300,340 80,380" fill="#0b172a" stroke="#00f0ff" stroke-width="2"/>
+                        <polygon points="400,120 540,320 400,290 260,320" fill="#122744"/>
+                        <circle cx="400" cy="210" r="8" fill="#00f0ff"/>
+                        <line x1="330" y1="355" x2="470" y2="355" stroke="#00f0ff" stroke-width="3" opacity="0.8"/>
+                        <!-- Branding Text -->
+                        <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#00f0ff" font-weight="bold" letter-spacing="3">RAVIE TACTICAL STEALTH</text>
+                    </svg>
                 </div>
                 <div class="card-body">
                     <h3>हाइपरसोनिक स्टील्थ UAV</h3>
-                    <p>स्वायत्त प्लाज्मा ड्राइव से लैस मानवरहित विमान, जो बिना रडार सिग्नेचर के स्ट्रैटोस्फियर में कार्य करता है।</p>
-                    <button class="card-btn" onclick="openModal('RAVIE Stealth UAV', 'यह हाइपरसोनिक स्टील्थ ड्रोन मैग्नेटो-प्लाज्मा थ्रस्ट सिस्टम पर आधारित है जो उच्च ऊंचाई पर बिना रडार की पकड़ में आए कार्य करता है।')">तकनीकी विवरण</button>
+                    <p>उच्च ऊंचाई पर बिना रडार सिग्नेचर के स्वायत्त टोही और निगरानी अभियानों के लिए डिज़ाइन किया गया सिस्टम।</p>
+                    <button class="card-btn" onclick="openModal('RAVIE Stealth UAV', 'यह ड्रोन मैग्नेटो-प्लाज्मा और स्टील्थ बॉडी डिज़ाइन पर आधारित है जो उच्च ऊंचाई पर बिना रडार की पकड़ में आए काम करता है।')">तकनीकी विवरण</button>
                 </div>
             </div>
 
-            <!-- Item 2: Heavy Transport Wing -->
+            <!-- Item 2: Heavy Autonomous Cargo Wing -->
             <div class="card">
                 <div class="card-img-wrap">
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='800' height='500' fill='%2302050c'/><path d='M 100,300 L 400,150 L 700,300 L 600,380 L 400,330 L 200,380 Z' fill='%2308101d' stroke='%230077ff' stroke-width='1.5'/><line x1='150' y1='300' x2='650' y2='300' stroke='%230077ff' stroke-width='1' stroke-dasharray='4,4'/><rect x='370' y='220' width='60' height='100' fill='%230e1e38' stroke='%230077ff' stroke-width='1'/><circle cx='400' cy='360' r='8' fill='%230077ff'/><text x='30' y='460' font-family='monospace' font-size='12' fill='%230077ff'>MODEL: RAVIE-CARGO V5 // HEAVY LIFT</text></svg>" alt="Heavy Cargo Wing">
-                    <span class="card-tag">HEAVY LIFT</span>
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#030816"/>
+                        <path d="M0,120 H800 M0,250 H800 M0,380 H800" stroke="#0077ff" stroke-width="0.3" opacity="0.2"/>
+                        <!-- Heavy Wing Shape -->
+                        <path d="M120,280 L400,140 L680,280 L580,380 L400,330 L220,380 Z" fill="#091830" stroke="#0077ff" stroke-width="2"/>
+                        <rect x="370" y="210" width="60" height="90" fill="#112952" stroke="#0077ff" stroke-width="1.5"/>
+                        <circle cx="400" cy="355" r="10" fill="#0077ff"/>
+                        <!-- Branding Text -->
+                        <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#0077ff" font-weight="bold" letter-spacing="3">RAVIE CARGO LIFTER</text>
+                    </svg>
                 </div>
                 <div class="card-body">
                     <h3>स्वायत्त कार्गो लिफ्टर</h3>
-                    <p>भविष्य के भारी रसद और आपूर्ति अभियानों के लिए डिज़ाइन किया गया 100% ऑटोनॉमस फ्लाइंग-विंग एयरक्राफ्ट।</p>
-                    <button class="card-btn" onclick="openModal('RAVIE Cargo Lifter', 'यह हेवी-लिफ्ट स्वायत्त विमान 50 टन तक के कार्गो को बिना किसी मानवीय हस्तक्षेप के लंबी दूरी तक ले जाने में सक्षम है।')">तकनीकी विवरण</button>
+                    <p>भारी रसद, आपातकालीन आपूर्ति और सैन्य लॉजिस्टिक्स के लिए 100% ऑटोनॉमस फ्लाइंग-विंग एयरक्राफ्ट।</p>
+                    <button class="card-btn" onclick="openModal('RAVIE Cargo Lifter', 'यह हेवी-लिफ्ट स्वायत्त विमान दुर्गम इलाकों में बिना किसी पायलट के भारी सामग्री सुरक्षित पहुंचाने में सक्षम है।')">तकनीकी विवरण</button>
                 </div>
             </div>
 
-            <!-- Item 3: eVTOL Urban Pod -->
+            <!-- Item 3: eVTOL Air Pod -->
             <div class="card">
                 <div class="card-img-wrap">
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='800' height='500' fill='%23040914'/><circle cx='250' cy='250' r='70' fill='none' stroke='%2300ffcc' stroke-width='2'/><circle cx='550' cy='250' r='70' fill='none' stroke='%2300ffcc' stroke-width='2'/><path d='M 250,220 C 350,180 450,180 550,220 C 580,280 520,320 400,320 C 280,320 220,280 250,220 Z' fill='%230d1e36' stroke='%2300ffcc' stroke-width='1.5'/><ellipse cx='400' cy='240' rx='70' ry='25' fill='%23020a17' stroke='%2300ffcc' stroke-width='1'/><text x='30' y='460' font-family='monospace' font-size='12' fill='%2300ffcc'>MODEL: RAVIE-MOBILITY P3 // eVTOL</text></svg>" alt="eVTOL Air Pod">
-                    <span class="card-tag">URBAN eVTOL</span>
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#020914"/>
+                        <!-- Dual Rotors Rings -->
+                        <circle cx="230" cy="240" r="85" fill="none" stroke="#00ffcc" stroke-width="2.5"/>
+                        <circle cx="570" cy="240" r="85" fill="none" stroke="#00ffcc" stroke-width="2.5"/>
+                        <!-- Pod Center Body -->
+                        <path d="M 230,220 C 330,170 470,170 570,220 C 600,280 540,330 400,330 C 260,330 200,280 230,220 Z" fill="#0c233c" stroke="#00ffcc" stroke-width="2"/>
+                        <ellipse cx="400" cy="245" rx="75" ry="25" fill="#030d1a" stroke="#00ffcc" stroke-width="1"/>
+                        <!-- Branding Text -->
+                        <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#00ffcc" font-weight="bold" letter-spacing="3">RAVIE URBAN eVTOL</text>
+                    </svg>
                 </div>
                 <div class="card-body">
-                    <h3>मैग्नेटिक eVTOL पॉड</h3>
-                    <p>बिना किसी शोर और प्रोपेलर के मैग्नेटिक थ्रस्ट रिंग्स पर चलने वाली 4-सीटर अर्बन एयर टैक्सी।</p>
-                    <button class="card-btn" onclick="openModal('RAVIE eVTOL Pod', 'शहरी यातायात के लिए तैयार यह एयर-पॉड मैग्नेटिक लेविटेशन और डक्टेड नोड्स का उपयोग करता है, जिससे शून्य ध्वनि प्रदूषण होता है।')">तकनीकी विवरण</button>
+                    <h3>अर्बन eVTOL पॉड</h3>
+                    <p>शहरी हवाई यातायात और त्वरित परिवहन के लिए मूक, सुरक्षित और शून्य-उत्सर्जन इलेक्ट्रिक वर्टिकल टेक-ऑफ पॉड।</p>
+                    <button class="card-btn" onclick="openModal('RAVIE eVTOL Pod', 'शहरी यातायात के लिए तैयार यह एयर-पॉड डक्टेड नोड्स और साइलेंट इलेक्ट्रिक मोटर तकनीक का उपयोग करता है।')">तकनीकी विवरण</button>
                 </div>
             </div>
 
-            <!-- Item 4: High-Altitude Atmospheric Satellite -->
+            <!-- Item 4: High Altitude Pseudo Satellite -->
             <div class="card">
                 <div class="card-img-wrap">
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='800' height='500' fill='%2302040a'/><line x1='100' y1='250' x2='700' y2='250' stroke='%237000ff' stroke-width='4'/><rect x='360' y='210' width='80' height='80' fill='%23110926' stroke='%237000ff' stroke-width='2'/><polygon points='400,140 430,210 370,210' fill='%237000ff' opacity='0.6'/><circle cx='400' cy='250' r='15' fill='%23ff00aa'/><text x='30' y='460' font-family='monospace' font-size='12' fill='%237000ff'>MODEL: RAVIE-SAT S9 // ATMOSPHERIC SENSOR</text></svg>" alt="Atmospheric Satellite">
-                    <span class="card-tag">SOLAR-HYBRID</span>
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#030511"/>
+                        <!-- Long Solar Wings -->
+                        <line x1="80" y1="240" x2="720" y2="240" stroke="#7000ff" stroke-width="6"/>
+                        <rect x="360" y="200" width="80" height="80" fill="#160a33" stroke="#7000ff" stroke-width="2"/>
+                        <polygon points="400,130 435,200 365,200" fill="#7000ff" opacity="0.7"/>
+                        <circle cx="400" cy="240" r="14" fill="#ff00aa"/>
+                        <!-- Branding Text -->
+                        <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#7000ff" font-weight="bold" letter-spacing="3">RAVIE HAPS SATELLITE</text>
+                    </svg>
                 </div>
                 <div class="card-body">
-                    <h3>स्यूडो-सैटेलाइट ड्रोन</h3>
-                    <p>महीनों तक लगातार समताप मंडल (Stratosphere) में उड़कर निगरानी और संचार सेवाएं प्रदान करने वाला क्राफ्ट।</p>
-                    <button class="card-btn" onclick="openModal('RAVIE Solar Satellite', 'यह हाई-अल्टीट्यूड स्यूडो सैटेलाइट (HAPS) सौर ऊर्जा और हाइड्रोजन फ्यूल सेल द्वारा 6 महीने तक निरंतर उड़ने में सक्षम है।')">तकनीकी विवरण</button>
+                    <h3>स्यूडो-सैटेलाइट ड्रोन (HAPS)</h3>
+                    <p>समताप मंडल (Stratosphere) में महीनों तक लगातार उड़कर निरंतर निगरानी और आपातकालीन संचार प्रदान करने वाला ड्रोन।</p>
+                    <button class="card-btn" onclick="openModal('RAVIE Solar Satellite', 'यह हाई-अल्टीट्यूड स्यूडो सैटेलाइट (HAPS) सोलर पैनल और हाइब्रिड बैटरी सिस्टम द्वारा लंबे समय तक उड़ सकता है।')">तकनीकी विवरण</button>
                 </div>
             </div>
 
-            <!-- Item 5: Deep Space Orbital Shuttle -->
+            <!-- Item 5: Orbital Exploration Shuttle -->
             <div class="card">
                 <div class="card-img-wrap">
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='800' height='500' fill='%2305020c'/><path d='M 400,80 L 580,420 L 400,370 L 220,420 Z' fill='%230e0a1a' stroke='%23ff00aa' stroke-width='2'/><path d='M 400,120 L 480,380 L 400,350 L 320,380 Z' fill='%231f1238'/><circle cx='400' cy='280' r='20' fill='%23ff00aa' opacity='0.8'/><line x1='400' y1='370' x2='400' y2='450' stroke='%2300f0ff' stroke-width='3'/><text x='30' y='460' font-family='monospace' font-size='12' fill='%23ff00aa'>MODEL: RAVIE-SHUTTLE Z7 // DEEP SPACE</text></svg>" alt="Deep Space Orbital Shuttle">
-                    <span class="card-tag">ORBITAL RE-ENTRY</span>
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#050314"/>
+                        <!-- Rocket Shuttle Shape -->
+                        <path d="M400,70 L580,410 L400,360 L220,410 Z" fill="#13092b" stroke="#ff00aa" stroke-width="2"/>
+                        <path d="M400,110 L470,370 L400,340 L330,370 Z" fill="#241147"/>
+                        <circle cx="400" cy="270" r="18" fill="#ff00aa" opacity="0.8"/>
+                        <line x1="400" y1="360" x2="400" y2="440" stroke="#00f0ff" stroke-width="3"/>
+                        <!-- Branding Text -->
+                        <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#ff00aa" font-weight="bold" letter-spacing="3">RAVIE ORBITAL SHUTTLE</text>
+                    </svg>
                 </div>
                 <div class="card-body">
-                    <h3>ऑर्बिटल डीप-स्पेस शटल</h3>
-                    <p>अत्यधिक तापमान रोधी प्लेट्स और एक्टिव प्लाज्मा शील्ड से लैस स्पेस री-एंट्री क्राफ्ट।</p>
-                    <button class="card-btn" onclick="openModal('RAVIE Space Shuttle', 'पृथ्वी के वायुमंडल में पुन: प्रवेश (Re-entry) के समय यह शटल 50,000°C तक के फ्रिक्शन हीट को रोकने के लिए प्लाज्मा थर्मल शील्ड का उपयोग करता है।')">तकनीकी विवरण</button>
+                    <h3>ऑर्बिटल स्पेस शटल</h3>
+                    <p>अंतरिक्ष अनुसंधान, री-एंट्री टेस्ट और हाई-अल्टीट्यूड प्रयोगों के लिए निर्मित उन्नत एयरोस्पेस क्राफ्ट।</p>
+                    <button class="card-btn" onclick="openModal('RAVIE Space Shuttle', 'पृथ्वी के वायुमंडल में पुन: प्रवेश के समय उच्च तापमान को सहने के लिए यह थर्मल शील्डिंग तकनीक का उपयोग करता है।')">तकनीकी विवरण</button>
                 </div>
             </div>
 
-        </div>
-
-        <!-- SPECS SUMMARY BOX -->
-        <div class="specs-box">
-            <div class="spec-item">
-                <h4>Mach 6.8+</h4>
-                <p>हाइपरसोनिक स्पीड</p>
-            </div>
-            <div class="spec-item">
-                <h4>100%</h4>
-                <p>ऑटोपायलट स्वायत्तता</p>
-            </div>
-            <div class="spec-item">
-                <h4>0%</h4>
-                <p>कार्बन उत्सर्जन</p>
-            </div>
-            <div class="spec-item">
-                <h4>2075</h4>
-                <p>विजन रेडी</p>
-            </div>
         </div>
     </section>
 
-    <!-- RESEARCH & INNOVATION SECTION -->
+    <!-- RESEARCH & SAFETY SECTION -->
     <section class="container" id="research">
         <h2 class="section-title">रिसर्च, सुरक्षा एवं नवाचार</h2>
-        <p class="section-subtitle">Research, Aviation Safety & Modern Aerodynamics</p>
+        <p class="section-subtitle">Research, Aviation Safety & Aerodynamics</p>
         <div style="background: var(--bg-card); border: 1px solid var(--border-glow); padding: 2.5rem; border-radius: 12px;">
             <p style="color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">
-                <b>RAVIE एयरोस्पेस</b> का मुख्य लक्ष्य आधुनिक और भविष्यवादी उड़न प्रणालियों की सुरक्षा और दक्षता में सुधार करना है।
+                <b>RAVIE एयरोस्पेस</b> का मुख्य उद्देश्य आधुनिक और भविष्यवादी उड़न प्रणालियों की सुरक्षा और दक्षता में सुधार करना है।
             </p>
             <ul style="color: var(--text-muted); padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
-                <li><b>उन्नत रोटरक्राफ्ट सुरक्षा (Advanced Rotorcraft Safety):</b> eVTOL और हेलीकॉप्टरों में दुर्घटना-रोधी AI ऑटोपायलट।</li>
-                <li><b>स्मार्ट विंग सिस्टम (Smart Wings):</b> नैनो-मटेरियल से बने पंख जो हवा के दबाव के अनुसार अपना आकार बदल लेते हैं।</li>
-                <li><b>कॉपीराइट-मुक्त तकनीक (100% Original):</b> हम सभी डिज़ाइन्स, कोड और इमेजेस को इन-हाउस कोड द्वारा ही जनरेट करते हैं ताकि कॉपीराइट का कोई खतरा न रहे।</li>
+                <li><b>उन्नत सुरक्षा प्रणाली (Advanced Safety):</b> स्वायत्त ऑटोपायलट और क्रैश-प्रूफ इमरजेंसी नेविगेशन।</li>
+                <li><b>स्मार्ट विंग डिज़ाइन (Smart Wings):</b> हवा के दबाव के अनुसार अनुकूलित होने वाले एरोडायनामिक मॉडल।</li>
+                <li><b>मूल डिज़ाइन (Original Code):</b> वेबसाइट का समस्त कोड और ग्राफिक्स पूरी तरह स्वदेशी और इन-हाउस जनरेटेड हैं।</li>
             </ul>
         </div>
     </section>
 
     <!-- FOOTER SECTION -->
     <footer>
-        <p>&copy; 2075 RAVIE Aerospace — Research, Aerospace, Ventures, Innovation and Execution.</p>
-        <p style="margin-top: 5px;">Built for GitHub Pages | <span onclick="openContactModal()">संपर्क करें (Contact Us)</span></p>
+        <p>&copy; RAVIE Aerospace — Research, Aerospace, Ventures, Innovation and Execution.</p>
+        <p style="margin-top: 8px;">Built for GitHub Pages | <span onclick="openContactModal()">संपर्क करें (Contact Us)</span></p>
     </footer>
 
-    <!-- INTERACTIVE TECH DETAIL MODAL POPUP -->
+    <!-- PRODUCT DETAIL POPUP MODAL -->
     <div class="modal" id="techModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('techModal')">&times;</button>
@@ -602,7 +549,7 @@
         </div>
     </div>
 
-    <!-- INTERACTIVE CONTACT US POPUP MODAL (CORRECTED EMAIL) -->
+    <!-- CONTACT US POPUP MODAL (WORKING CONTACT BOX) -->
     <div class="modal" id="contactModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
@@ -612,70 +559,64 @@
             <ul class="contact-info-list">
                 <li><span>ईमेल (Email):</span> <a href="mailto:ravie.aerospace@gmail.com">ravie.aerospace@gmail.com</a></li>
                 <li><span>फोन नंबर (Mobile):</span> <a href="tel:+919918075777">+91 9918075777</a></li>
-                <li><span>सहायता:</span> 24/7 AI Supported Communication Response</li>
             </ul>
 
             <form id="contactForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
                     <label>आपका नाम (Full Name)</label>
-                    <input type="text" id="senderName" required placeholder="अपना पूरा नाम दर्ज करें">
+                    <input type="text" id="senderName" required placeholder="अपना पूरा नाम लिखें">
                 </div>
                 <div class="form-group">
                     <label>आपका ईमेल या फोन नंबर (Your Contact)</label>
-                    <input type="text" id="senderContact" required placeholder="अपना ईमेल या मोबाइल नंबर दर्ज करें">
+                    <input type="text" id="senderContact" required placeholder="अपना ईमेल या मोबाइल नंबर लिखें">
                 </div>
                 <div class="form-group">
-                    <label>संदेश (Message / SMS)</label>
+                    <label>संदेश (Message)</label>
                     <textarea id="senderMessage" rows="3" required placeholder="अपना संदेश यहाँ लिखें..."></textarea>
                 </div>
-                <button type="submit" class="submit-btn">संदेश भेजें (Send SMS/Message)</button>
+                <button type="submit" class="submit-btn">संदेश भेजें (Send Message)</button>
             </form>
         </div>
     </div>
 
     <!-- JAVASCRIPT FOR INTERACTIVITY & MODALS -->
     <script>
-        // Open Product Details Modal
+        // Product Details Modal
         function openModal(title, text) {
-            const modal = document.getElementById('techModal');
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalBody').innerText = text;
-            modal.style.display = 'flex';
+            document.getElementById('techModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
-        // Open Contact Us Modal
+        // Contact Us Pop-up Modal
         function openContactModal() {
-            const modal = document.getElementById('contactModal');
-            modal.style.display = 'flex';
+            document.getElementById('contactModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
-        // Close Any Modal
+        // Close Modal Function
         function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.style.display = 'none';
+            document.getElementById(modalId).style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        // Handle Contact Form Submit (Message Confirmation)
+        // Contact Form Submit Action
         function handleFormSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('senderName').value;
-            alert(`धन्यवाद ${name}! आपका संदेश RAVIE Aerospace टीम (ravie.aerospace@gmail.com) को भेज दिया गया है। हम आपसे जल्द संपर्क करेंगे।`);
+            alert(`धन्यवाद ${name}! आपका संदेश RAVIE Aerospace (ravie.aerospace@gmail.com) को भेज दिया गया है।`);
             document.getElementById('contactForm').reset();
             closeModal('contactModal');
         }
 
-        // Close Modals on Outer Click
+        // Close on Background Click
         window.addEventListener('click', function(event) {
-            const techModal = document.getElementById('techModal');
-            const contactModal = document.getElementById('contactModal');
-            if (event.target === techModal) closeModal('techModal');
-            if (event.target === contactModal) closeModal('contactModal');
+            if (event.target === document.getElementById('techModal')) closeModal('techModal');
+            if (event.target === document.getElementById('contactModal')) closeModal('contactModal');
         });
 
-        // Close Modals on Escape Key Press
+        // Close on ESC Key
         window.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal('techModal');
