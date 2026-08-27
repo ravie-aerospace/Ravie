@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Controls so changes reflect instantly -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <title>RAVIE Aerospace | Advanced Aerospace & Autonomous Systems</title>
-    <meta name="description" content="RAVIE — Research, Aerospace, Ventures, Innovation and Execution. Advanced Defense and Air Mobility Technology.">
+    <meta name="description" content="RAVIE — Research, Aerospace, Ventures, Innovation and Execution.">
     <meta name="theme-color" content="#030b14">
     
     <!-- Google Fonts -->
@@ -15,13 +20,13 @@
     <style>
         :root {
             --bg-dark: #02060e;
-            --bg-card: rgba(10, 20, 38, 0.75);
-            --border-glow: rgba(0, 210, 255, 0.3);
+            --bg-card: rgba(10, 20, 38, 0.85);
+            --border-glow: rgba(0, 210, 255, 0.35);
             --accent-cyan: #00f0ff;
             --accent-blue: #0077ff;
             --accent-purple: #7000ff;
             --text-main: #e6edf3;
-            --text-muted: #8b9bb4;
+            --text-muted: #94a3b8;
             --font-head: 'Orbitron', sans-serif;
             --font-body: 'Rajdhani', 'Noto Sans Devanagari', sans-serif;
         }
@@ -41,17 +46,17 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 85% 65%, rgba(112, 0, 255, 0.06) 0%, transparent 40%);
+                radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(112, 0, 255, 0.08) 0%, transparent 40%);
         }
 
-        /* NAVIGATION BAR */
+        /* NAVBAR */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(2, 6, 14, 0.85);
+            background: rgba(2, 6, 14, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-glow);
             padding: 1rem 5%;
@@ -65,7 +70,7 @@
             font-size: 1.8rem;
             font-weight: 900;
             letter-spacing: 3px;
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
         }
 
@@ -97,7 +102,7 @@
 
         /* HERO SECTION */
         .hero {
-            min-height: 85vh;
+            min-height: 80vh;
             padding: 140px 5% 60px;
             display: flex;
             flex-direction: column;
@@ -156,7 +161,7 @@
             font-family: var(--font-head);
             font-size: 2.2rem;
             margin-bottom: 0.5rem;
-            color: #fff;
+            color: #ffffff;
             letter-spacing: 2px;
         }
 
@@ -169,7 +174,7 @@
             letter-spacing: 1.5px;
         }
 
-        /* SHOWCASE CARDS GRID */
+        /* GRID CARDS */
         .grid-5 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -213,7 +218,7 @@
             font-family: var(--font-head);
             font-size: 1.25rem;
             margin-bottom: 0.8rem;
-            color: #fff;
+            color: #ffffff;
         }
 
         .card-body p {
@@ -227,7 +232,7 @@
             border: 1px solid var(--accent-cyan);
             color: var(--accent-cyan);
             font-family: var(--font-head);
-            padding: 8px 18px;
+            padding: 10px 18px;
             font-size: 0.85rem;
             cursor: pointer;
             border-radius: 4px;
@@ -261,7 +266,7 @@
             background: #081120;
             border: 1px solid var(--accent-cyan);
             border-radius: 12px;
-            max-width: 600px;
+            max-width: 550px;
             width: 100%;
             padding: 2.2rem;
             position: relative;
@@ -366,6 +371,7 @@
         footer span {
             color: var(--accent-cyan);
             cursor: pointer;
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -377,7 +383,7 @@
 </head>
 <body>
 
-    <!-- NAVIGATION BAR -->
+    <!-- NAVBAR -->
     <header>
         <a href="#" class="brand-name">
             RAVIE <span>AEROSPACE</span>
@@ -400,7 +406,7 @@
         <a href="#models" class="hero-btn">ड्रोन मॉडल देखें</a>
     </section>
 
-    <!-- 5 HIGH-TECH DRONE MODELS -->
+    <!-- DRONE MODELS -->
     <section class="container" id="models">
         <h2 class="section-title">एयरोस्पेस मॉडल एवं तकनीक</h2>
         <p class="section-subtitle">Advanced Autonomous & Tactical Flying Systems</p>
@@ -412,14 +418,11 @@
                 <div class="card-img-wrap">
                     <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
                         <rect width="800" height="500" fill="#020612"/>
-                        <!-- Grid Lines -->
                         <path d="M0,100 H800 M0,250 H800 M0,400 H800 M200,0 V500 M400,0 V500 M600,0 V500" stroke="#00f0ff" stroke-width="0.3" opacity="0.15"/>
-                        <!-- Stealth Wing Body -->
                         <polygon points="400,80 720,380 500,340 400,310 300,340 80,380" fill="#0b172a" stroke="#00f0ff" stroke-width="2"/>
                         <polygon points="400,120 540,320 400,290 260,320" fill="#122744"/>
                         <circle cx="400" cy="210" r="8" fill="#00f0ff"/>
                         <line x1="330" y1="355" x2="470" y2="355" stroke="#00f0ff" stroke-width="3" opacity="0.8"/>
-                        <!-- Branding Text -->
                         <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#00f0ff" font-weight="bold" letter-spacing="3">RAVIE TACTICAL STEALTH</text>
                     </svg>
                 </div>
@@ -436,11 +439,9 @@
                     <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
                         <rect width="800" height="500" fill="#030816"/>
                         <path d="M0,120 H800 M0,250 H800 M0,380 H800" stroke="#0077ff" stroke-width="0.3" opacity="0.2"/>
-                        <!-- Heavy Wing Shape -->
                         <path d="M120,280 L400,140 L680,280 L580,380 L400,330 L220,380 Z" fill="#091830" stroke="#0077ff" stroke-width="2"/>
                         <rect x="370" y="210" width="60" height="90" fill="#112952" stroke="#0077ff" stroke-width="1.5"/>
                         <circle cx="400" cy="355" r="10" fill="#0077ff"/>
-                        <!-- Branding Text -->
                         <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#0077ff" font-weight="bold" letter-spacing="3">RAVIE CARGO LIFTER</text>
                     </svg>
                 </div>
@@ -456,13 +457,10 @@
                 <div class="card-img-wrap">
                     <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
                         <rect width="800" height="500" fill="#020914"/>
-                        <!-- Dual Rotors Rings -->
                         <circle cx="230" cy="240" r="85" fill="none" stroke="#00ffcc" stroke-width="2.5"/>
                         <circle cx="570" cy="240" r="85" fill="none" stroke="#00ffcc" stroke-width="2.5"/>
-                        <!-- Pod Center Body -->
                         <path d="M 230,220 C 330,170 470,170 570,220 C 600,280 540,330 400,330 C 260,330 200,280 230,220 Z" fill="#0c233c" stroke="#00ffcc" stroke-width="2"/>
                         <ellipse cx="400" cy="245" rx="75" ry="25" fill="#030d1a" stroke="#00ffcc" stroke-width="1"/>
-                        <!-- Branding Text -->
                         <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#00ffcc" font-weight="bold" letter-spacing="3">RAVIE URBAN eVTOL</text>
                     </svg>
                 </div>
@@ -478,12 +476,10 @@
                 <div class="card-img-wrap">
                     <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
                         <rect width="800" height="500" fill="#030511"/>
-                        <!-- Long Solar Wings -->
                         <line x1="80" y1="240" x2="720" y2="240" stroke="#7000ff" stroke-width="6"/>
                         <rect x="360" y="200" width="80" height="80" fill="#160a33" stroke="#7000ff" stroke-width="2"/>
                         <polygon points="400,130 435,200 365,200" fill="#7000ff" opacity="0.7"/>
                         <circle cx="400" cy="240" r="14" fill="#ff00aa"/>
-                        <!-- Branding Text -->
                         <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#7000ff" font-weight="bold" letter-spacing="3">RAVIE HAPS SATELLITE</text>
                     </svg>
                 </div>
@@ -499,12 +495,10 @@
                 <div class="card-img-wrap">
                     <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
                         <rect width="800" height="500" fill="#050314"/>
-                        <!-- Rocket Shuttle Shape -->
                         <path d="M400,70 L580,410 L400,360 L220,410 Z" fill="#13092b" stroke="#ff00aa" stroke-width="2"/>
                         <path d="M400,110 L470,370 L400,340 L330,370 Z" fill="#241147"/>
                         <circle cx="400" cy="270" r="18" fill="#ff00aa" opacity="0.8"/>
                         <line x1="400" y1="360" x2="400" y2="440" stroke="#00f0ff" stroke-width="3"/>
-                        <!-- Branding Text -->
                         <text x="40" y="450" font-family="'Orbitron', sans-serif" font-size="22" fill="#ff00aa" font-weight="bold" letter-spacing="3">RAVIE ORBITAL SHUTTLE</text>
                     </svg>
                 </div>
@@ -518,7 +512,7 @@
         </div>
     </section>
 
-    <!-- RESEARCH & SAFETY SECTION -->
+    <!-- RESEARCH & SAFETY -->
     <section class="container" id="research">
         <h2 class="section-title">रिसर्च, सुरक्षा एवं नवाचार</h2>
         <p class="section-subtitle">Research, Aviation Safety & Aerodynamics</p>
@@ -534,13 +528,13 @@
         </div>
     </section>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer>
         <p>&copy; RAVIE Aerospace — Research, Aerospace, Ventures, Innovation and Execution.</p>
         <p style="margin-top: 8px;">Built for GitHub Pages | <span onclick="openContactModal()">संपर्क करें (Contact Us)</span></p>
     </footer>
 
-    <!-- PRODUCT DETAIL POPUP MODAL -->
+    <!-- PRODUCT DETAIL MODAL -->
     <div class="modal" id="techModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('techModal')">&times;</button>
@@ -549,7 +543,7 @@
         </div>
     </div>
 
-    <!-- CONTACT US POPUP MODAL (WORKING CONTACT BOX) -->
+    <!-- CONTACT US MODAL -->
     <div class="modal" id="contactModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
@@ -579,9 +573,8 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT FOR INTERACTIVITY & MODALS -->
+    <!-- JAVASCRIPT -->
     <script>
-        // Product Details Modal
         function openModal(title, text) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalBody').innerText = text;
@@ -589,34 +582,29 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // Contact Us Pop-up Modal
         function openContactModal() {
             document.getElementById('contactModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
-        // Close Modal Function
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        // Contact Form Submit Action
         function handleFormSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('senderName').value;
-            alert(`धन्यवाद ${name}! आपका संदेश RAVIE Aerospace (ravie.aerospace@gmail.com) को भेज दिया गया है।`);
+            alert(`धन्यवाद ${name}! आपका संदेश RAVIE Aerospace को भेज दिया गया है।`);
             document.getElementById('contactForm').reset();
             closeModal('contactModal');
         }
 
-        // Close on Background Click
         window.addEventListener('click', function(event) {
             if (event.target === document.getElementById('techModal')) closeModal('techModal');
             if (event.target === document.getElementById('contactModal')) closeModal('contactModal');
         });
 
-        // Close on ESC Key
         window.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal('techModal');
