@@ -1,152 +1,24 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exploring the Aerospace Frontier</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* --- New Realistisc Background Classes --- */
-        .featured-bg {
-            background-image: url('https://image.pollinations.ai/prompt/A%20photorealistic%20image%20of%20a%20advanced%20hexacopter%20with%20complex%20sensors%20and%20carbon%20fiber%20arms%2C%20flying%20high%20above%20a%20modern%20smart%20farm%20during%20a%20clear%20day%2C%20no%20logos%20on%20the%20drone.');
-        }
-
-        .projects-bg {
-            background-image: url('https://image.pollinations.ai/prompt/A%20detailed%20close-up%20photograph%20of%20a%20sleek%2C%20autonomous%20fixed-wing%20aerospace%20drone%20gliding%20at%20high%20altitude%20above%20a%20futuristic%20coastal%20city%2C%20at%20sunset%2C%20no%20logos.');
-        }
-
-        .resources-bg {
-            background-image: url('https://image.pollinations.ai/prompt/An%20interior%20view%20of%20a%20busy%20UAV%20testing%20facility%20at%20night%20with%20a%20large%20monitor%20showing%20a%20drone%20control%20dashboard%2C%20a%20realistic%20racing%20drone%20is%20on%20a%20test%20bench%2C%20no%20logos.');
-        }
-        
-        .hero-bg, .projects-bg, .resources-bg {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        /* --- Updated Styles for Logos --- */
-        header {
-            background-color: #1e293b;
-            color: #fff;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-            letter-spacing: 1.5px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #38bdf8;
-        }
-
-        /* --- Sections Style --- */
-        .featured, .projects, .resources {
-            padding: 4rem 2rem;
-            color: white;
-            text-align: center;
-        }
-
-        /* Adding dark overlay for text readability on images */
-        .featured > div, .projects > div, .resources > div {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 2rem;
-            border-radius: 10px;
-            display: inline-block;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.75rem 1.5rem;
-            background-color: #0284c7;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background-color: #0369a1;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <title>Contact Us - RAVIE</title>
 </head>
 <body>
+  <h1>Contact Us</h1>
+  <form action="send_message.php" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
 
-    <header>
-        <!-- Changed: Text Logo 'Ravie' instead of an image logo -->
-        <div class="logo">Ravie</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#resources">Resources</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-    <section class="featured featured-bg hero" id="home">
-        <div>
-            <h2>Exploring the Aerospace Frontier</h2>
-            <p>Advancing drone technology for a connected world.</p>
-            <a href="#projects" class="btn">Learn More</a>
-        </div>
-    </section>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" required></textarea><br><br>
 
-    <section class="projects projects-bg" id="projects">
-        <div>
-            <h3>Current Projects</h3>
-            <p>Developments in autonomous navigation and fleet management.</p>
-        </div>
-    </section>
+    <button type="submit">Send</button>
+  </form>
 
-    <section class="resources resources-bg" id="resources">
-        <div>
-            <h3>UAV Resources</h3>
-            <p>Access our technical documentation, research papers, and API specifications.</p>
-        </div>
-    </section>
-
-    <div class="container" id="about">
-        <h3>About Us</h3>
-        <p>Ravie provides comprehensive solutions for drone operators and developers...</p>
-    </div>
-
+  <a href="index.html">Back to Home</a>
 </body>
 </html>
