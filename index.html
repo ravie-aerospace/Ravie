@@ -1,24 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us - RAVIE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAVIE Aerospace - Home</title>
+  <meta name="description" content="RAVIE explores aerospace research, innovation, ventures and execution — UAV, rotorcraft, safety, future technologies." />
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#ffffff; --muted:#6b7280; --accent:#0b6efd;
+      --max-width:1100px; --radius:10px; --gap:18px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:#111;line-height:1.5}
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+    .site-header{background:var(--card);border-bottom:1px solid #e6e9ef;position:sticky;top:0;z-index:20}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px}
+    .brand .logo-text{font-weight:800;font-size:22px;letter-spacing:1px}
+    .brand .tagline{font-size:12px;color:var(--muted)}
+    .nav{list-style:none;margin:0;padding:0;display:flex;gap:12px;align-items:center}
+    .nav a{display:inline-block;padding:10px 8px;text-decoration:none;color:var(--muted);border-radius:6px}
+    .nav a:hover,.nav a.active{color:var(--accent);background:rgba(11,110,253,0.06)}
+    .nav-toggle{display:none;background:none;border:1px solid #e6e9ef;padding:8px;border-radius:6px}
+
+    /* Hero */
+    .hero{padding:60px 0;background:linear-gradient(180deg,#ffffff 0%, #f3f6ff 100%);text-align:center}
+    .hero-title{font-size:36px;margin:0 0 8px}
+    .hero-sub{font-size:18px;color:var(--muted);margin:0 0 12px}
+    .hero-lead{color:var(--muted);margin-bottom:18px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+    .btn.primary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+    .btn.primary:hover{background:var(--accent);color:#fff}
+
+    /* Sections */
+    .section{padding:28px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start}
+    .card-quote{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .bullets{padding-left:18px;color:var(--muted)}
+
+    /* Pillars */
+    .pillars{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .pillar{background:var(--card);padding:14px;border-radius:10px;flex:1;min-width:160px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .pillar-icon{font-size:20px;margin-bottom:8px}
+
+    /* Research grid */
+    .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .research-card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,0.04);display:flex;flex-direction:column;gap:12px}
+    .research-card h3{margin:0;font-size:16px}
+    .research-card p{margin:0;color:var(--muted);font-size:14px}
+    .visual{height:80px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+
+    /* Callout */
+    .callout{background:linear-gradient(90deg,#fff,#f8fbff);padding:28px;border-radius:12px;text-align:center}
+
+    /* Footer */
+    .site-footer{background:#fff;border-top:1px solid #e6e9ef;margin-top:30px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px}
+    .footer-nav{list-style:none;display:flex;gap:12px;margin:0;padding:0}
+    .footer-nav a{color:var(--muted);text-decoration:none;font-size:14px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .research-grid{grid-template-columns:repeat(2,1fr)}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .research-grid{grid-template-columns:1fr}
+      .nav{display:none}
+      .nav.open{display:flex;flex-direction:column;background:var(--card);position:absolute;right:16px;top:64px;padding:12px;border-radius:8px;box-shadow:0 8px 24px rgba(15,23,42,0.08)}
+      .nav-toggle{display:inline-block}
+      .header-inner{padding:8px 16px}
+      .hero-title{font-size:28px}
+      .grid-2{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-  <h1>Contact Us</h1>
-  <form action="send_message.php" method="post">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-text" aria-hidden="true">RAVIE</div>
+        <div class="tagline">Research · Aerospace · Ventures · Innovation · Execution</div>
+      </div>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+      <nav aria-label="Main navigation">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+        <ul id="mainNav" class="nav">
+          <li><a href="RAVIE_index_FINAL_APPROVED.html" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#framework">Framework</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" required></textarea><br><br>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="container hero-inner">
+        <h1 id="heroTitle" class="hero-title">RAVIE AEROSPACE</h1>
+        <p class="hero-sub">Shaping the Future of Aerospace</p>
+        <p class="hero-lead">Research • Aerospace • Ventures • Innovation • Execution</p>
+        <a class="btn primary" href="#research">Explore RAVIE</a>
+      </div>
+    </section>
 
-    <button type="submit">Send</button>
-  </form>
+    <!-- Intro / About -->
+    <section id="about" class="container section about">
+      <div class="grid-2">
+        <div>
+          <h2>About RAVIE</h2>
+          <p><strong>Building ideas for the aerospace future.</strong> RAVIE explores emerging aerospace technologies and develops ideas that contribute to the future of flight. We connect scientific research with engineering, experimentation, and practical development.</p>
+          <ul class="bullets">
+            <li>Research Driven</li>
+            <li>Innovation Focused</li>
+            <li>Safety First</li>
+            <li>Future Ready</li>
+          </ul>
+        </div>
+        <div class="card-quote">
+          <h3>RAVIE</h3>
+          <p>Research · Aerospace · Ventures · Innovation · Execution</p>
+        </div>
+      </div>
+    </section>
 
-  <a href="index.html">Back to Home</a>
+    <!-- Vision & Mission -->
+    <section id="vision" class="container section">
+      <h2>Our Vision</h2>
+      <p>To explore what comes next — safer, smarter, and more capable aerospace systems.</p>
+
+      <h2 id="mission">Our Mission</h2>
+      <p><strong>Research. Innovate. Execute.</strong> Advance aerospace science and engineering through research, validation, innovation, and development of next‑generation systems.</p>
+    </section>
+
+    <!-- Framework -->
+    <section id="framework" class="container section">
+      <h2>The RAVIE Framework</h2>
+      <p>Five Pillars. One Vision.</p>
+      <div class="pillars">
+        <article class="pillar">
+          <div class="pillar-icon">01 ⌕</div>
+          <h4>Research</h4>
+          <p>Scientific investigation, technical analysis, and knowledge development.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar-icon">02 ✈</div>
+          <h4>Aerospace</h4>
+          <p>Aircraft, rotorcraft, UAVs, and future flight concepts.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar-icon">03 ◇</div>
+          <h4>Ventures</h4>
+          <p>Turning research into meaningful ventures and opportunities.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar-icon">04 ✦</div>
+          <h4>Innovation</h4>
+          <p>New ideas, technologies, and approaches to complex challenges.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar-icon">05 ↗</div>
+          <h4>Execution</h4>
+          <p>Disciplined project delivery and practical development.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Research Cards -->
+    <section id="research" class="container section">
+      <h2>Research Areas</h2>
+      <p>Exploring the Aerospace Frontier.</p>
+
+      <div class="research-grid">
+        <!-- Card 1: UAV -->
+        <article class="research-card">
+          <div class="visual visual-uav" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="8" fill="#0b6efd"/>
+              <g fill="#fff" transform="translate(10,18)">
+                <path d="M0 20 L30 0 L60 20 L30 40 Z" />
+                <circle cx="30" cy="20" r="4" />
+              </g>
+            </svg>
+          </div>
+          <h3>UAV / UAS</h3>
+          <p>Autonomous platforms, mission applications, and advanced aerial capabilities.</p>
+        </article>
+
+        <!-- Card 2: Rotorcraft -->
+        <article class="research-card">
+          <div class="visual visual-rotor" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="8" fill="#00b894"/>
+              <g fill="#fff" transform="translate(20,20)">
+                <ellipse cx="20" cy="20" rx="18" ry="6"/>
+                <rect x="18" y="8" width="4" height="24" />
+              </g>
+            </svg>
+          </div>
+          <h3>Rotorcraft</h3>
+          <p>Aerodynamics, vertical flight concepts, and rotor technologies.</p>
+        </article>
+
+        <!-- Card 3: Aircraft Safety -->
+        <article class="research-card">
+          <div class="visual visual-safety" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="8" fill="#fdcb6e"/>
+              <g fill="#2d3436" transform="translate(18,18)">
+                <path d="M0 30 L24 0 L48 30 Z" />
+                <rect x="20" y="30" width="8" height="10" />
+              </g>
+            </svg>
+          </div>
+          <h3>Aircraft Safety</h3>
+          <p>Risk, human factors, system reliability, and advanced safety concepts.</p>
+        </article>
+
+        <!-- Card 4: Aerospace Systems -->
+        <article class="research-card">
+          <div class="visual visual-systems" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="8" fill="#6c5ce7"/>
+              <g fill="#fff" transform="translate(14,14)">
+                <rect x="0" y="0" width="36" height="20" rx="3"/>
+                <rect x="44" y="0" width="36" height="20" rx="3"/>
+                <rect x="22" y="28" width="36" height="20" rx="3"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Aerospace Systems</h3>
+          <p>Avionics, control systems, structures, propulsion, and architectures.</p>
+        </article>
+
+        <!-- Card 5: Future Technologies -->
+        <article class="research-card">
+          <div class="visual visual-future" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="8" fill="#ff7675"/>
+              <g fill="#fff" transform="translate(18,18)">
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="36" cy="12" r="6"/>
+                <path d="M6 36 L42 36" stroke="#fff" stroke-width="3" />
+              </g>
+            </svg>
+          </div>
+          <h3>Future Technologies</h3>
+          <p>Materials, propulsion, autonomy, AI, and breakthrough aerospace tech.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <section class="container section callout">
+      <h2>The Future Starts With Research</h2>
+      <p>Think beyond the horizon. RAVIE is exploring new possibilities in aerospace, technology, research, and innovation.</p>
+      <a class="btn" href="contact.html">Connect With RAVIE</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo-text">RAVIE</div>
+        <div class="small">Research · Aerospace · Ventures · Innovation · Execution</div>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="RAVIE_index_FINAL_APPROVED.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#framework">Framework</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">© 2026 RAVIE Aerospace. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple nav toggle for small screens
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        mainNav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
